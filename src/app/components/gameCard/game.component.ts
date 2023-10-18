@@ -1,7 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Game } from "../../interfaces/game.interface";
-import {FiddleStickExceptionPipe} from "../../pipes/fiddleStickExceptionPipe/fiddle-stick-exception.pipe";
+import { SummonerService } from "../../services/summoner/summoner.service";
+import { catchError, of } from "rxjs";
 
+interface SummonerObj {
+  puuid: string;
+}
 
 @Component({
   selector: 'app-gameCard',
@@ -11,6 +15,7 @@ import {FiddleStickExceptionPipe} from "../../pipes/fiddleStickExceptionPipe/fid
 export class GameComponent implements OnInit {
   @Input() game: Game | undefined;
   @Input() username: string | null = "";
+  @Input() puuid: string | null = "";
 
   summonerNames: { [key: number]: string } = {
     1: "SummonerBoost",
@@ -23,7 +28,6 @@ export class GameComponent implements OnInit {
     14: "SummonerDot",
     21: "SummonerBarrier",
   }
-
 
   win: boolean = false;
   items: number[] = [];
@@ -44,13 +48,16 @@ export class GameComponent implements OnInit {
   team1Champs: string[] = [];
   team2Champs: string[] = [];
 
+  constructor(private summonerService: SummonerService) { }
+
   ngOnInit(): void {
     this.setGameInfo();
   }
 
-  setGameInfo(user: string = this.username || ""): void {
-    if (this.game) {
-      const currentUserParticipant = this.game.info.participants.find(participant => participant.summonerName === user);
+  setGameInfo(): void {
+    if (this.game && this.puuid) {
+      // Use this.puuid for fetching game-related data instead of a summoner name
+      const currentUserParticipant = this.game.info.participants.find(participant => participant.puuid === this.puuid);
 
       if (currentUserParticipant) {
         this.win = currentUserParticipant.win;
@@ -72,9 +79,9 @@ export class GameComponent implements OnInit {
         this.assists = currentUserParticipant.assists;
         this.visionScore = currentUserParticipant.visionScore;
         if (this.deaths === 0) {
-          this.kda = `Perfect`;
+          this.kda = ((this.kills + this.assists)).toFixed(2);
         }
-        else {
+      else {
           this.kda = ((this.kills + this.assists) / this.deaths).toFixed(2);
         }
         this.totalMinionsKilled = currentUserParticipant.totalMinionsKilled;

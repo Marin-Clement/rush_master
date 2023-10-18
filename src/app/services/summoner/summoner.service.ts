@@ -10,6 +10,11 @@ export class SummonerService {
 
   constructor(private http: HttpClient) { }
 
+  getSummonerInfo(summonerName: string | null) {
+    const url = `${this._apiUrl}/summonerInfo/${summonerName}`;
+    return this.http.get<any>(url, {responseType: 'json'});
+  }
+
   getSummoners() {
     const url = `${this._apiUrl}/allSummonerNames`;
     return this.http.get<any>(url, {responseType: 'json'});

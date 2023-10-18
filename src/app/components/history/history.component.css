@@ -1,3 +1,26 @@
+.no-more-games{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.no-more-games-icon{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #0a0a2f;
+}
+.no-more-games-icon:hover{
+  transform: scale(1.1);
+  background: #fd9a00;
+}
 .no-games{
   display: flex;
   flex-direction: column;
