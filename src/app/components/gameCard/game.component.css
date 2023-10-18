@@ -1,0 +1,307 @@
+.game-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1C224A;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 0 10px 0;
+  margin: 20px 10%;
+  border-right: 10px solid #29346d;
+  transition: 0.2s ease-in-out;
+  animation: comeIn 1s;
+}
+@keyframes comeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.game-container.lose {
+  background-color: #3F233C;
+  border-right: 10px solid #e90b0b;
+}
+.game-container.lose:hover {
+  background-color: #cb3b3b8c;
+}
+.game-container:hover {
+  background-color: #242e62;
+}
+.game-general-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+}
+.game-general-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+  width: 100px;
+}
+.game-container > .game-general-info-container > .game-general-info{
+  border-right: 3px dotted #2F6DEC;
+}
+.game-container.lose > .game-general-info-container > .game-general-info{
+  border-right: 3px dotted #e90b0b;
+}
+.game-general-info-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 5px 10px;
+  color : #e5e5e5;
+}
+.game-general-info-time-value-duration {
+  color : #bcbcbc;
+  margin-top: 5px;
+}
+.game-general-info-win{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 10px;
+  color : #fff;
+  font-size: 1.3rem;
+}
+.summoner-image-container {
+  overflow: hidden;
+  border-radius: 10%;
+  margin-right: 10px;
+}
+.game-general-info-champion-icon {
+  width: 75px;
+  height: 75px;
+  scale: 1.3;
+}
+.item-container {
+  display: flex;
+  flex-direction: row;
+  margin-right: 0.5rem;
+}
+.summoner-stats-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.summoner-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  color : #fff;
+}
+.summoner-stats-kda {
+  margin: 5px 0;
+  font-size: 1.4rem;
+}
+.summoner-stats-cs {
+  margin: 2px 0;
+  color : #bcbcbc;
+}
+.summoner-stats-vision {
+  margin: 2px 0;
+  color : #bcbcbc;
+}
+.game-general-info-kda {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+.summoner-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  margin-right: 5px;
+}
+
+.summoner-item-empty {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  margin-right: 5px;
+  background-color: #242e62;
+}
+.summoner-summoner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summoner-summoner-spell {
+  width: 35px;
+  height: 35px;
+  border-radius: 10%;
+  margin-right: 5px;
+}
+.team-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  width: 8rem;
+  color : #fff;
+}
+.summoner-team-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 125px;
+}
+.summoner-team-container:hover > .summoner-team-name {
+  border-left: 2px solid white;
+}
+.summoner-summoner-champion-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 20%;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  transition: 0.2s ease-in-out;
+}
+.summoner-team-name {
+  margin: 0 5px;
+  padding-left: 5px;
+  font-size: 0.7rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1200px) {
+  .game-container {
+    margin: 20px 5%;
+    font-size: 0.8rem;
+  }
+  .game-general-info-container {
+    margin-left: 0;
+  }
+  .game-general-info {
+    margin-right: 0;
+  }
+  .game-general-info-time {
+    margin: 0;
+  }
+  .game-general-info-win {
+    margin: 0;
+  }
+  .summoner-stats-container {
+    margin-right: 0;
+  }
+  .summoner-stats {
+    margin: 0;
+  }
+  .summoner-item {
+    margin-right: 0;
+  }
+  .summoner-summoner-container {
+    margin-right: 0;
+  }
+  .team-container {
+    margin-right: 0;
+  }
+  .team {
+    margin-right: 0;
+  }
+  .summoner-team-container {
+    margin-right: 0;
+  }
+  .summoner-team-name {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .team-container {
+    display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .summoner-team-container {
+    display: none;
+  }
+  .game-container {
+    flex-direction: column;
+    margin: 20px 10%;
+    border-right: 0;
+    border-left: 0;
+    background: linear-gradient(
+      0,
+      rgb(37, 139, 37) 0%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(44, 51, 61, 1) 100%
+    );
+    border-bottom: 10px solid #6fe86f;
+  }
+  .game-container:hover {
+    border-bottom: 10px solid #ffffff;
+    border-left: 0px solid #ffffff00;
+  }
+  .game-container.lose {
+    border-right: 0;
+    border-left: 0;
+    background: linear-gradient(
+      0,
+      rgb(244, 50, 50) 0%,
+      rgba(255, 77, 77, 0) 50%,
+      rgba(44, 51, 61, 0) 50%,
+      rgba(44, 51, 61, 1) 100%
+    );
+  }
+  .game-container > .game-general-info-container > .game-general-info{
+    border-right: none;
+    border-bottom: 3px dotted #00d900;
+  }
+  .game-container.lose > .game-general-info-container > .game-general-info{
+    border-right: none;
+    border-bottom: 3px dotted #e90b0b;
+  }
+  .game-general-info {
+    border-right: none;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .game-general-info-champion-icon {
+    margin-right: 0;
+  }
+  .summoner-summoner-spell {
+    margin-right: 0;
+  }
+  .item-container {
+    margin-right: 0;
+    columns: 2;
+  }
+  .summoner-item {
+    margin-right: 0;
+    width: 25px;
+    height: 25px;
+  }
+  .summoner-item-empty {
+    margin-right: 0;
+    width: 25px;
+    height: 25px;
+  }
+  .summoner-stats-container {
+    flex-direction: column;
+  }
+  .game-general-info-container {
+    flex-direction: column;
+  }
+  .summoner-summoner-container {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,13 @@
+<ng-container *ngIf="summoners">
+  <section class="summoner-list">
+    <ng-container *ngFor="let summoner of summoners.summonerNames; let i = index">
+      <ng-container *ngIf="summonerStats[i]">
+        <app-summoner
+          [summonerName]="summoner"
+          [summonerIconId]="summoners.summonerIconsIds[i]"
+          [summonerStats]="summonerStats[i]">
+        </app-summoner>
+      </ng-container>
+    </ng-container>
+  </section>
+</ng-container>

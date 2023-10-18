@@ -1,0 +1,18 @@
+<ng-container *ngIf="loading">
+  <section class="loading">
+    <h2 class="loading-text">Loading<span class="loading-dots"></span></h2>
+    <img src="assets/images/loading.png" alt="Loading" height="200" width="200" class="loading-img">
+  </section>
+</ng-container>
+<ng-container *ngIf="!loading && noGamesFound">
+  <section class="no-games">
+    <img ngSrc="assets/images/error.png" alt="No games found" height="200" width="200">
+    <h2>No games found !</h2>
+    <p>This Player has no games in his match history</p>
+  </section>
+</ng-container>
+<ng-container *ngIf="!loading && !noGamesFound">
+  <ng-container *ngFor="let game of games">
+    <app-gameCard [game]="game" [username]="username"></app-gameCard>
+  </ng-container>
+</ng-container>

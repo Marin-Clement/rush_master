@@ -1,0 +1,24 @@
+<link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+<section class="summoner-container" [routerLink]="['/summoner', summonerName]">
+  <img class="summoner-img" ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{ summonerIconId }}.png" alt="profile icon" width="50" height="50" priority="true">
+  <p class="summoner-name">{{ summonerName }}</p>
+  <div class="summoner-stats-container">
+    <div class="rank-container">
+      <img class="summoner-rank-img" ngSrc="assets/images/ranked-emblems/{{ summonerStats.tier | lowercase }}.jpeg" alt="ranked emblem" width="100" height="100" priority="true">
+      <p class="summoner-rank">{{ summonerStats.tier | titlecase }} {{ summonerStats.rank }}</p>
+    </div>
+    <div class="summoner-stats-info">
+      <p>
+        <span class="summoner-wins">{{ summonerStats.wins }}</span>
+        W
+        /
+        <span class="summoner-losses">{{ summonerStats.losses }}</span>
+        L
+      </p>
+      <p class="summoner-winrate">WR :
+        <span class="summoner-winrate-value" [ngStyle]="{'color': getWinrateColor(summonerStats.winrate)}">{{ summonerStats.winrate }}%</span>
+      </p>
+      <p class="summoner-lp"><span class="summoner-lp-value">{{ summonerStats.leaguePoints }}</span> LP</p>
+    </div>
+  </div>
+</section>

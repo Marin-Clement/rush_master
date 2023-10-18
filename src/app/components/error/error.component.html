@@ -1,0 +1,25 @@
+<ng-container *ngIf="error === 'HttpErrorResponse'">
+  <div class="alert" role="alert">
+    <img class="error-img" ngSrc="assets/images/error.png" alt="error" width="200" height="200">
+    <h4 class="alert-heading">Error: {{ error }}</h4>
+    <p>Something went wrong.</p>
+    <p>The server is not responding or the connection has been lost.</p>
+    <a href="https://github.com/Marin-Clement/">Please Contact the Administrator</a>
+  </div>
+</ng-container>
+<ng-container *ngIf="error === '404'">
+  <div class="alert" role="alert">
+    <img class="error-img" ngSrc="assets/images/error.png" alt="error" width="200" height="200">
+    <h4 class="alert-heading">Error {{ error }}</h4>
+    <p>Ooops...</p>
+    <p>This page does not exist.</p>
+  </div>
+</ng-container>
+<ng-container *ngIf="error === '403'">
+  <div class="alert" role="alert">
+    <img class="error-img" ngSrc="assets/images/error.png" alt="error" width="200" height="200">
+    <h4 class="alert-heading">Error {{ error }}</h4>
+    <p>Ooops...</p>
+    <p>You are not allowed to access this page.</p>
+  </div>
+</ng-container>

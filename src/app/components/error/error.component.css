@@ -1,0 +1,26 @@
+.alert{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #282c34;
+}
+.alert-heading{
+  color: #da3232;
+}
+.error-img{
+  max-width: 500px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+}
+a{
+  color: #6fe86f;
+  text-decoration: underline;
+}
+a:hover{
+  color: #a1dea1;
+}

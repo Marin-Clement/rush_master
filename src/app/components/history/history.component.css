@@ -1,0 +1,81 @@
+.no-games{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.loading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+.loading-text {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.loading-dots::after {
+  content: "...";
+  display: inline-block;
+  animation: loadingDots 1.5s infinite;
+  width: 0;
+  height: 2rem;
+  overflow: hidden;
+}
+
+@keyframes loadingDots {
+  0%, 60%, 100% {
+    width: 0;
+  }
+  30% {
+    width: 25px;
+  }
+}
+.loading-img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+h2{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+}
+h2:hover{
+  color: #ce2828;
+}
+p{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+img{
+  object-fit: cover;
+  border-radius: 25%;
+}
