@@ -45,16 +45,17 @@ export class SummonerlistComponent implements OnInit {
 
   private sortByRank(): void {
     const tier: { [key: string]: number } = {
-      "IRON": 1,
-      "BRONZE": 2,
-      "SILVER": 3,
-      "GOLD": 4,
-      "PLATINUM": 5,
-      "EMERALD": 6,
-      "DIAMOND": 7,
-      "MASTER": 8,
-      "GRANDMASTER": 9,
-      "CHALLENGER": 10,
+      "UNRANKED": 1,
+      "IRON": 2,
+      "BRONZE": 3,
+      "SILVER": 4,
+      "GOLD": 5,
+      "PLATINUM": 6,
+      "EMERALD": 7,
+      "DIAMOND": 8,
+      "MASTER": 9,
+      "GRANDMASTER": 10,
+      "CHALLENGER": 11,
     };
     const rank: { [key: string]: number } = {
       "I": 4,
