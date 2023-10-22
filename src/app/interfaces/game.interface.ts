@@ -34,6 +34,7 @@ interface participant {
   deaths: number;
   assists: number;
   totalMinionsKilled: number;
+  neutralMinionsKilled: number;
   champLevel: number;
   championId: number;
   championName: string;

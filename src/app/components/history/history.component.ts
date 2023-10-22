@@ -47,8 +47,8 @@ export class HistoryComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       this.username = params.get("username");
     });
-    this.fetchGamesIds();
     this.fetchSummoner();
+    this.fetchGamesIds();
   }
 
   fetchGamesIds() {
@@ -85,7 +85,7 @@ export class HistoryComponent implements OnInit {
   loadNextBatch() {
     const startIndex = this.currentBatchIndex;
     const endIndex = startIndex + this.batchSize;
-    const fakeDelay = 500;
+    const fakeDelay = 0;
 
     for (let i = startIndex; i < endIndex && i < this.gamesIds.length; i++) {
       setTimeout(() => {
@@ -99,6 +99,7 @@ export class HistoryComponent implements OnInit {
             finalize(() => {
               if (i === endIndex - 1 || i === this.gamesIds.length - 1) {
                 this.loading = false;
+                console.log("Loading complete");
               }
             })
           )
@@ -117,7 +118,6 @@ export class HistoryComponent implements OnInit {
       this.noMoreGames = true;
     }
   }
-
 
   fetchSummoner() {
     this.summonerService

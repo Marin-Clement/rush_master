@@ -1,3 +1,66 @@
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.history-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.history-stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40em;
+  height: 100%;
+  border-right: 2px solid #3272f9;
+  background: #0d0d31;
+  margin-right: 2rem;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  animation: stepFromLeft 0.5s ease-in-out;
+}
+.game-history{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90em;
+  height: 100%;
+  border-left: 2px solid #3272f9;
+  background: #0b0b2e;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  animation: stepFromRight 0.5s ease-in-out;
+}
+@keyframes stepFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes stepFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 .no-more-games{
   display: flex;
   flex-direction: column;
@@ -19,7 +82,7 @@
 }
 .no-more-games-icon:hover{
   transform: scale(1.1);
-  background: #fd9a00;
+  background: #3272F9FF;
 }
 .no-games{
   display: flex;

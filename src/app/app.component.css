@@ -13,8 +13,16 @@
   color: #fff;
   padding: 15px 25px 15px 25px;
   background-color: #0a0a2f;
-  border-bottom: 5px solid #FF9B00;
+  border-bottom: 5px solid #3272F9FF;
   border-radius: 15px;
+}
+.Header-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: 100%;
 }
 .Header-title {
   font-size: 2em;
@@ -26,20 +34,19 @@
   color: #fff;
   transition: 0.5s ease-in-out;
 }
-.Header-title:hover > .Header-title-Master{
+.Header-main:hover .Header-title-Master {
   color: #ca6fe8;
-  scale: 1.2;
+}
+
+.Header-main:hover .Header-logo {
+  transform: scale(1.05);
 }
 .Header-logo {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  cursor: pointer;
-  margin-left: 30px;
+  margin-right: 30px;
   transition: 0.2s ease-in-out;
-}
-.Header-logo:hover {
-  scale: 0.95;
 }
 .Footer {
   display: flex;
@@ -49,7 +56,7 @@
   color: #fff;
   padding: 15px 25px 15px 25px;
   background-color: #0a0a2f;
-  border-top: 5px solid #FF9B00;
+  border-top: 5px solid #3272F9FF;
   border-radius: 15px;
 }
 .Footer a {

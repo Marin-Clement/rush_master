@@ -12,6 +12,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { GameComponent } from './components/gameCard/game.component';
 import { TimeAgoPipe } from './pipes/timeAgo/time-ago.pipe';
 import { FiddleStickExceptionPipe } from './pipes/fiddleStickExceptionPipe/fiddle-stick-exception.pipe';
+import { SummonerhistorystatsComponent } from './components/summonerhistorystats/summonerhistorystats.component';
+import { SummonerheaderComponent } from './components/summonerheader/summonerheader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FiddleStickExceptionPipe } from './pipes/fiddleStickExceptionPipe/fiddl
     GameComponent,
     TimeAgoPipe,
     FiddleStickExceptionPipe,
+    SummonerhistorystatsComponent,
+    SummonerheaderComponent,
   ],
   imports: [
     BrowserModule,

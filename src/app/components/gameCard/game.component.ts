@@ -37,6 +37,7 @@ export class GameComponent implements OnInit {
   assists: number = 0;
   kda: string = "0";
   totalMinionsKilled: number = 0;
+  neutralMinionsKilled: number = 0;
   champLevel: number = 0;
   championName: string = "";
   summonerName: string = "";
@@ -85,6 +86,7 @@ export class GameComponent implements OnInit {
           this.kda = ((this.kills + this.assists) / this.deaths).toFixed(2);
         }
         this.totalMinionsKilled = currentUserParticipant.totalMinionsKilled;
+        this.neutralMinionsKilled = currentUserParticipant.neutralMinionsKilled;
         this.champLevel = currentUserParticipant.champLevel;
         this.championName = currentUserParticipant.championName;
         this.summonerName = currentUserParticipant.summonerName;

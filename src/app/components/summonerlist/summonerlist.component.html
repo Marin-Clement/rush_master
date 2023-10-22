@@ -3,6 +3,7 @@
     <ng-container *ngFor="let summoner of summoners.summonerNames; let i = index">
       <ng-container *ngIf="summonerStats[i]">
         <app-summoner
+          [index]="i"
           [summonerName]="summoner"
           [summonerIconId]="summoners.summonerIconsIds[i]"
           [summonerStats]="summonerStats[i]">

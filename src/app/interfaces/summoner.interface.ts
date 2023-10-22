@@ -12,3 +12,18 @@ export interface SummonerStat {
   losses: number;
   winrate: number;
 }
+
+export interface SummonerHistoryStat {
+  summoner: string;
+  numberOfGames: number;
+  wins: number;
+  losses: number;
+  mainRole: string;
+  champions: [];
+  winrate: number;
+  kda: number;
+  csPerMin: number;
+  goldPerMin: number;
+  damagePerMin: number;
+  visionPerMin: number;
+}

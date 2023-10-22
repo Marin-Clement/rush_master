@@ -1,11 +1,17 @@
 <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
-<section class="summoner-container" [routerLink]="['/summoner', summonerName]">
+<section class="summoner-container" [routerLink]="['/summoner', summonerName]" [ngStyle]="{'animation-delay': (index * 0.1) + 's'}">
+  <p class="summoner-rank-position">{{ index + 1 }}.</p>
   <img class="summoner-img" ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{ summonerIconId }}.png" alt="profile icon" width="50" height="50" priority="true">
   <p class="summoner-name">{{ summonerName }}</p>
   <div class="summoner-stats-container">
     <div class="rank-container">
       <img class="summoner-rank-img" ngSrc="assets/images/ranked-emblems/{{ summonerStats.tier | lowercase }}.jpeg" alt="ranked emblem" width="100" height="100" priority="true">
-      <p class="summoner-rank">{{ summonerStats.tier | titlecase }} {{ summonerStats.rank }}</p>
+      <ng-container *ngIf="summonerStats.tier === 'MASTER' || summonerStats.tier === 'GRANDMASTER' || summonerStats.tier === 'CHALLENGER'">
+        <p class="summoner-rank">{{ summonerStats.tier | titlecase }}</p>
+      </ng-container>
+      <ng-container *ngIf="summonerStats.tier !== 'MASTER' && summonerStats.tier !== 'GRANDMASTER' && summonerStats.tier !== 'CHALLENGER'">
+        <p class="summoner-rank">{{ summonerStats.tier | titlecase }} {{ summonerStats.rank }}</p>
+      </ng-container>
     </div>
     <div class="summoner-stats-info">
       <p>

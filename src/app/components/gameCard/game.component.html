@@ -1,3 +1,4 @@
+
 <section class="game-container" [ngClass]="{ 'win': win, 'lose': !win }">
   <div class="game-general-info-container">
     <div class="game-general-info">
@@ -39,7 +40,7 @@
         <span class="game-general-info-kda-value" [ngStyle]="{ color: kda === 'Perfect' ? 'rgb(255,134,39)' : 'white' }">{{ kda }} KDA</span>
       </div>
       <div class="summoner-stats-cs">
-        <span class="summoner-stats-cs-value">{{ totalMinionsKilled }} ({{totalMinionsKilled/((gameDuration*1000)/60000) | number: '1.1-1'}})</span>
+        <span class="summoner-stats-cs-value">{{ totalMinionsKilled+neutralMinionsKilled }} ({{(totalMinionsKilled+neutralMinionsKilled)/((gameDuration*1000)/60000) | number: '1.1-1'}})</span>
       </div>
       <div class="summoner-stats-vision">
         <span class="summoner-stats-vision-value">{{ visionScore }} Vision</span>

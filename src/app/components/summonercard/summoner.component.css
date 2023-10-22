@@ -9,17 +9,39 @@
   align-items: center;
   background-color: #121228;
   border-radius: 5px;
-  animation: comeIn 1s;
   cursor: pointer;
   border-left: 5px solid rgba(44, 51, 61, 0);
   padding: 10px 0 10px 0;
   margin: 20px 10%;
   transition: 0.2s ease-in-out;
+  opacity: 0; /* Start with 0 opacity */
+  transform: translateY(20px); /* Start with a lower position */
+  animation: card-appear 0.5s ease-in-out;
+  animation-fill-mode: both;
 }
+
+/* Define the animation properties */
+@keyframes card-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .summoner-container:hover {
   background-color: #15152f;
-  border-left: 10px solid #FF9B00;
+  border-left: 10px solid #3272F9FF;
   border-radius: 15px;
+}
+.summoner-rank-position {
+  font-size: 1.5em;
+  color: #fff;
+  margin-left: 10px;
+  width: 3%;
 }
 .summoner-img {
   width: 100px;
@@ -33,7 +55,7 @@
   color: #fff;
   margin-left: 50px;
   width: 30%;
-  border-right: 3px dotted #FF9B00;
+  border-right: 3px dotted #3272F9FF;
   padding-right: 10px;
 }
 
@@ -61,7 +83,7 @@
   flex-direction: column;
   align-items: center;
   margin-right: 2%;
-  border-left: 3px dashed #FF9B00;
+  border-left: 3px dashed #3272F9FF;
   padding-left: 2%;
   width: 25%;
 }
@@ -144,7 +166,7 @@
     border-bottom: 5px solid #2c333d;
   }
   .summoner-container:hover {
-    border-bottom: 10px solid #FF9B00;
+    border-bottom: 10px solid #3272F9FF;
     border-left: 0;
     border-radius: 15px;
   }
@@ -154,7 +176,7 @@
   .summoner-name {
     margin: 10px 0 10px 0;
     border-right: none;
-    border-bottom: 3px dotted #FF9B00;
+    border-bottom: 3px dotted #3272F9FF;
     padding-right: 0;
     padding-bottom: 10px;
     text-align: center;
@@ -169,23 +191,12 @@
   }
   .summoner-stats-info {
     border-left: none;
-    border-bottom: 3px dashed #FF9B00;
+    border-bottom: 3px dashed #3272F9FF;
     padding-left: 0;
     margin: 10px 0 10px 0;
     width: 100%;
   }
   .summoner-wins-losses {
     margin: 10px 0 10px 0;
-  }
-}
-
-@keyframes comeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
