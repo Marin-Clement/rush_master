@@ -137,6 +137,13 @@
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
 }
+.live-game-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 @keyframes spin{
   0%{
     transform: rotate(0deg);
@@ -164,4 +171,13 @@ p{
 img{
   object-fit: cover;
   border-radius: 25%;
+}
+
+@media only screen and (max-height: 900px){
+  .history-stats{
+    width: 28em;
+  }
+  .game-history{
+    width: 53em;
+  }
 }

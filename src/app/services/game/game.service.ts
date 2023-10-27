@@ -57,4 +57,20 @@ export class GameService {
 
     return request;
   }
+
+  public getChampionJson(): Observable<any> {
+    const url = `http://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion.json`;
+
+    // Check if the data is in the cache
+    if (this.cache.has(url)) {
+      return of(this.cache.get(url));
+    }
+
+    const request = this.http.get<any>(url, {responseType: 'json'});
+
+    // Cache the data after fetching it
+    request.subscribe(data => this.cache.set(url, data));
+
+    return request;
+  }
 }

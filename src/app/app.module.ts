@@ -14,6 +14,12 @@ import { TimeAgoPipe } from './pipes/timeAgo/time-ago.pipe';
 import { FiddleStickExceptionPipe } from './pipes/fiddleStickExceptionPipe/fiddle-stick-exception.pipe';
 import { SummonerhistorystatsComponent } from './components/summonerhistorystats/summonerhistorystats.component';
 import { SummonerheaderComponent } from './components/summonerheader/summonerheader.component';
+import { LivegameComponent } from './components/livegame/livegame.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import {FormsModule} from "@angular/forms";
+import { GamedeepinfoComponent } from './components/gamedeepinfo/gamedeepinfo.component';
+import { AdminpanelComponent } from './components/adminpanel/adminpanel.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +33,18 @@ import { SummonerheaderComponent } from './components/summonerheader/summonerhea
     FiddleStickExceptionPipe,
     SummonerhistorystatsComponent,
     SummonerheaderComponent,
+    LivegameComponent,
+    AboutComponent,
+    ContactComponent,
+    GamedeepinfoComponent,
+    AdminpanelComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

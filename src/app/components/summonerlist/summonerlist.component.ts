@@ -14,6 +14,7 @@ import {th} from "date-fns/locale";
 export class SummonerlistComponent implements OnInit {
   summoners: Summoner = { summonerNames: [], summonerIconsIds: [] };
   summonerStats: SummonerStat[] = [];
+  liveGameInfo: any;
 
   constructor(private _summonerService: SummonerService, private router: Router) {}
 
@@ -25,11 +26,12 @@ export class SummonerlistComponent implements OnInit {
     this._summonerService.getSummoners()
       .pipe(
         catchError((error) => {
-          console.error('Error fetching data:', error);
+          console.error({error: 'Error fetching data:'}, error);
           // Navigate to the error page
           this.router.navigate(['/error', error.name]).then(r => console.log(r));
           return throwError(error);
-        })
+        }),
+
       )
       .subscribe((data: Summoner) => {
         this.summoners = data;
@@ -40,6 +42,11 @@ export class SummonerlistComponent implements OnInit {
           this.summonerStats = stats;
           this.sortByRank();
         });
+      });
+    this._summonerService.getLiveGameInfo()
+      .subscribe((liveGameInfo) => {
+        this.liveGameInfo = liveGameInfo;
+        console.log('Live game information:', liveGameInfo);
       });
   }
 
@@ -106,5 +113,20 @@ export class SummonerlistComponent implements OnInit {
     this.summonerStats.sort((a, b) => {
       return b.winrate - a.winrate;
     });
+  }
+
+  isSummonerInGame(summonerNameToCheck: string): boolean {
+    for (const gameInfo of this.liveGameInfo) {
+      if (gameInfo.game && gameInfo.game.participants) {
+        // Iterate through the participants array
+        for (const participant of gameInfo.game.participants) {
+          if (participant.summonerName === summonerNameToCheck) {
+            return true; // The summoner is a participant in the game
+          }
+        }
+      }
+    }
+
+    return false; // Summoner is not in the game
   }
 }

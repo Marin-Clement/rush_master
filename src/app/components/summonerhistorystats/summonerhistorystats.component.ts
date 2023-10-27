@@ -23,7 +23,7 @@ export interface ChampionStats {
 export class SummonerhistorystatsComponent implements OnInit {
   @Input() summonerName: string | null = "";
   loading: boolean = true;
-  NoStats: boolean = false;
+  NoStats: boolean = true;
 
   summoner: string = "Summoner";
   numberOfGames: number = 0;
@@ -62,9 +62,12 @@ export class SummonerhistorystatsComponent implements OnInit {
       .pipe(
         finalize(() => {
           this.loading = false; // Set loading to false after the request is complete
+          if (this.championStats.length === 0) {
+            this.NoStats = true;
+          }
         }),
         catchError((error) => {
-          console.error("Error fetching summoner history stats:", error);
+          console.error({error: "Error fetching summoner history stats:"}, error);
           this.NoStats = true; // Set NoStats to true if there is an error
           return of([]);
         }

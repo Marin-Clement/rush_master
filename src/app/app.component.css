@@ -1,9 +1,9 @@
 .Container {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   padding: 20px;
   min-height: 100vh;
+  background-color: #0a0a2f;
 }
 .Header {
   display: flex;
@@ -14,14 +14,12 @@
   padding: 15px 25px 15px 25px;
   background-color: #0a0a2f;
   border-bottom: 5px solid #3272F9FF;
-  border-radius: 15px;
 }
 .Header-main {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  cursor: pointer;
   width: 100%;
 }
 .Header-title {
@@ -34,12 +32,8 @@
   color: #fff;
   transition: 0.5s ease-in-out;
 }
-.Header-main:hover .Header-title-Master {
+.Header:hover .Header-title-Master {
   color: #ca6fe8;
-}
-
-.Header-main:hover .Header-logo {
-  transform: scale(1.05);
 }
 .Header-logo {
   width: 100px;
@@ -48,16 +42,42 @@
   margin-right: 30px;
   transition: 0.2s ease-in-out;
 }
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-link {
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s ease-in-out
+}
+.nav-link:hover {
+  color: #ca6fe8;
+}
+.nav-link.active {
+  color: #ca6fe8;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #ca6fe8;
+}
+.nav-separator {
+  color: #fff;
+  font-size: 2em;
+  margin: 0 10px 0 10px;
+}
 .Footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   color: #fff;
+  font-size: 2em;
   padding: 15px 25px 15px 25px;
   background-color: #0a0a2f;
   border-top: 5px solid #3272F9FF;
-  border-radius: 15px;
 }
 .Footer a {
   color: #fff;
@@ -69,5 +89,11 @@
 }
 .Footer-text-Heart {
   color: #ca6fe8;
+}
+.Footer-riot {
+  color: #bebebe;
+  font-size: 0.5em;
+  margin-top: 10px;
+  text-align: center;
 }
 

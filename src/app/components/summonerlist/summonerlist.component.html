@@ -1,9 +1,11 @@
+<!-- In your component's HTML template -->
 <ng-container *ngIf="summoners">
   <section class="summoner-list">
     <ng-container *ngFor="let summoner of summoners.summonerNames; let i = index">
       <ng-container *ngIf="summonerStats[i]">
         <app-summoner
           [index]="i"
+          [inGame]="isSummonerInGame(summoner)"
           [summonerName]="summoner"
           [summonerIconId]="summoners.summonerIconsIds[i]"
           [summonerStats]="summonerStats[i]">

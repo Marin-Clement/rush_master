@@ -84,6 +84,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
   padding: 20px;
 }
 .champion-stats-title {
@@ -107,7 +108,7 @@ p {
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  min-width: 10em;
+  width: 10em;
 }
 .champion-stats-image {
   width: 50px;
@@ -387,4 +388,160 @@ p {
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
+}
+@media only screen and (max-height: 900px) {
+  .champion-stats-container {
+    padding: 10px;
+    width: 25em;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+  }
+  .champion-stats-title {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .champion-stats {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .champion-base-stats {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .champion-stats-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .champion-stats-name {
+    font-size: 12px;
+    margin-right: 0px;
+  }
+  .champion-winrate-stats {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .champion-kda-stats {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .summoner-stats-number-of-games-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-number-of-games-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-winrate-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-winrate-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-kda-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-kda-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-csPerMin-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-csPerMin-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-goldPerMin-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-goldPerMin-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-damagePerMin-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-damagePerMin-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .summoner-stats-visionPerMin-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #828282;
+    text-align: center;
+  }
+
+  .summoner-stats-visionPerMin-value {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-align: center;
+  }
 }

@@ -1,0 +1,27 @@
+<section class="contact-container">
+  <div class="contact-form">
+    <p class="contact-title">Contact Us</p>
+    <div class="contact-separator"></div>
+    <form (submit)="submitForm()">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" autocomplete="off" [(ngModel)]="name" name="name" required class="form-input">
+
+      <label for="case" class="form-label">Topic</label>
+      <select id="case" [(ngModel)]="selectedCase" name="selectedCase" required class="form-select">
+        <option value="" disabled selected>Select a case</option>
+        <option value="issue" class="case-option">Bug Report</option>
+        <option value="idea" class="case-option">Feature Request</option>
+        <option value="addAccount" class="case-option">Add Account</option>
+        <option value="message" class="case-option">Other</option>
+      </select>
+
+      <label for="message" class="form-label">Message</label>
+      <textarea id="message" [(ngModel)]="message" name="message" required class="form-textarea"></textarea>
+      <div class="button-container">
+        <button type="submit" class="form-button" [disabled]="!name || !selectedCase || !message">Submit</button>
+      </div>
+    </form>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <div class="success-message" *ngIf="successMessage">{{ successMessage }}</div>
+  </div>
+</section>

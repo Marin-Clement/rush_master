@@ -1,0 +1,232 @@
+<section class="game-container">
+  <section class="team1">
+    <ng-container *ngFor="let summoner of team1">
+      <div class="summoner" [ngClass]="currentSummoner === summoner.summonerName ? 'current-summoner' : ''">
+        <div class="main-info">
+          <div class="summoner-champion">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{  summoner.championName | fiddleStickException }}.png"
+                 class="summoner-summoner-champion-icon"
+                 width="50"
+                 height="50"
+                 alt="champion icon">
+          </div>
+          <div class="summoner-spells">
+            <div class="summoner-spell">
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSpellName(summoner.summoner1Id) }}.png"
+                   class="summoner-spell-icon"
+                   width="25"
+                   height="25"
+                   alt="summoner spell icon">
+            </div>
+            <div class="summoner-spell">
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSpellName(summoner.summoner2Id) }}.png"
+                   class="summoner-spell-icon"
+                   width="25"
+                   height="25"
+                   alt="summoner spell icon">
+            </div>
+          </div>
+          <div class="summoner-name">{{ summoner.summonerName }}</div>
+        </div>
+        <div class="kill-death-assist">
+          <div class="summoner-kda">
+            <div class="summoner-kda-item">{{ summoner.kills }}</div>
+            <p class="summoner-kda-item">/</p>
+            <div class="summoner-kda-item">{{ summoner.deaths }}</div>
+            <p class="summoner-kda-item">/</p>
+            <div class="summoner-kda-item">{{ summoner.assists }}</div>
+          </div>
+        </div>
+        <div class="damage">
+          <div class="summoner-damage">
+            <div class="summoner-damage-item">{{ summoner.totalDamageDealtToChampions }}</div>
+            <div class="damage-bar">
+              <div class="damage-bar-fill" [style.width.%]="summoner.totalDamageDealtToChampions / maxDamage * 100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="damage-taken">
+          <div class="summoner-damage-taken">
+            <div class="summoner-damage-taken-item">{{ summoner.totalDamageTaken }}</div>
+            <div class="damage-taken-bar">
+              <div class="damage-taken-bar-fill" [style.width.%]="summoner.totalDamageTaken / maxDamageTaken * 100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="summoner-items">
+          <div class="summoner-item" *ngIf="summoner.item0">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item0 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item0"></div>
+          <div class="summoner-item" *ngIf="summoner.item1">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item1 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item1"></div>
+          <div class="summoner-item" *ngIf="summoner.item2">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item2 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item2"></div>
+          <div class="summoner-item" *ngIf="summoner.item3">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item3 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item3"></div>
+          <div class="summoner-item" *ngIf="summoner.item4">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item4 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item4"></div>
+          <div class="summoner-item" *ngIf="summoner.item5">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item5 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item5"></div>
+          <div class="summoner-item" *ngIf="summoner.item6">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item6 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item6"></div>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+  <section class="team2">
+    <ng-container *ngFor="let summoner of team2">
+      <div class="summoner" [ngClass]="currentSummoner === summoner.summonerName ? 'current-summoner' : ''">
+        <div class="main-info">
+          <div class="summoner-champion">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{  summoner.championName | fiddleStickException }}.png"
+                 class="summoner-summoner-champion-icon"
+                 width="50"
+                 height="50"
+                 alt="champion icon">
+          </div>
+          <div class="summoner-spells">
+            <div class="summoner-spell">
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSpellName(summoner.summoner1Id) }}.png"
+                   class="summoner-spell-icon"
+                   width="25"
+                   height="25"
+                   alt="summoner spell icon">
+            </div>
+            <div class="summoner-spell">
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSpellName(summoner.summoner2Id) }}.png"
+                   class="summoner-spell-icon"
+                   width="25"
+                   height="25"
+                   alt="summoner spell icon">
+            </div>
+          </div>
+          <div class="summoner-name">{{ summoner.summonerName }}</div>
+        </div>
+        <div class="kill-death-assist">
+          <div class="summoner-kda">
+            <div class="summoner-kda-item">{{ summoner.kills }}</div>
+            <p class="summoner-kda-item">/</p>
+            <div class="summoner-kda-item">{{ summoner.deaths }}</div>
+            <p class="summoner-kda-item">/</p>
+            <div class="summoner-kda-item">{{ summoner.assists }}</div>
+          </div>
+        </div>
+        <div class="damage">
+          <div class="summoner-damage">
+            <div class="summoner-damage-item">{{ summoner.totalDamageDealtToChampions }}</div>
+            <div class="damage-bar">
+              <div class="damage-bar-fill" [style.width.%]="summoner.totalDamageDealtToChampions / maxDamage * 100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="damage-taken">
+          <div class="summoner-damage-taken">
+            <div class="summoner-damage-taken-item">{{ summoner.totalDamageTaken }}</div>
+            <div class="damage-taken-bar">
+              <div class="damage-taken-bar-fill" [style.width.%]="summoner.totalDamageTaken / maxDamageTaken * 100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="summoner-items">
+          <div class="summoner-item" *ngIf="summoner.item0">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item0 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item0"></div>
+          <div class="summoner-item" *ngIf="summoner.item1">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item1 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item1"></div>
+          <div class="summoner-item" *ngIf="summoner.item2">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item2 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item2"></div>
+          <div class="summoner-item" *ngIf="summoner.item3">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item3 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item3"></div>
+          <div class="summoner-item" *ngIf="summoner.item4">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item4 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item4"></div>
+          <div class="summoner-item" *ngIf="summoner.item5">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item5 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item5"></div>
+          <div class="summoner-item" *ngIf="summoner.item6">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ summoner.item6 }}.png"
+                 class="summoner-item-icon"
+                 width="25"
+                 height="25"
+                 alt="item icon">
+          </div>
+          <div class="summoner-item-empty" *ngIf="!summoner.item6"></div>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+</section>

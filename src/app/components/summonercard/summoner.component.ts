@@ -7,6 +7,7 @@ import { SummonerStat } from '../../interfaces/summoner.interface';
   styleUrls: ['./summoner.component.css']
 })
 export class SummonerComponent {
+  @Input() inGame: boolean = true;
   @Input() index: number = 0;
   @Input() summonerName: string = '';
   @Input() summonerIconId: string = '';

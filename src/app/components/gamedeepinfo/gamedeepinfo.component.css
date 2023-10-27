@@ -1,0 +1,191 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.team1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.team1 .summoner {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items:center;
+  margin: 0 auto;
+  width: 45em;
+  height: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid #2F6DEC;
+  border-left: 6px solid #2F6DEC;
+  background-color: #1C224A;
+}
+.team1 .summoner.current-summoner {
+  background-color: #283062;
+}
+.team2 .summoner.current-summoner {
+  background-color: #5b3a57;
+}
+
+.team2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.team2 .summoner {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items:center;
+  margin: 0 auto;
+  width: 45em;
+  height: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid #941c1c;
+  border-left: 6px solid #941c1c;
+  background-color: #3F233C;
+}
+.summoner-summoner-champion-icon {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.5rem;
+}
+.summoner-name {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.main-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 40%;
+  height: 100%;
+  border-radius: 5px;
+}
+.kill-death-assist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 12%;
+  height: 100%;
+  border-radius: 5px;
+}
+.summoner-kda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.summoner-kda-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.summoner-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 40%;
+  height: 100%;
+  border-radius: 5px;
+}
+.summoner-item-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.2rem;
+}
+.summoner-item-empty {
+  min-width: 1.6em;
+  min-height: 1.6em;
+  background: #181e3f;
+  margin-right: 0.2rem;
+}
+.damage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+  margin-left: 2rem;
+  border-radius: 5px;
+}
+.summoner-damage-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.3rem 0.2rem;
+}
+.damage-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  border-radius: 5px;
+  background: #181e3f;
+}
+.damage-bar-fill {
+  width: 100%;
+  height: 0.5em;
+  background: #d02121;
+  border-radius: 5px;
+}
+.damage-taken {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+  border-radius: 5px;
+}
+.summoner-damage-taken-item {
+  color: #fff;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 0.3rem 0.2rem;
+}
+.damage-taken-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  border-radius: 5px;
+  background: #181e3f;
+}
+.damage-taken-bar-fill {
+  width: 100%;
+  height: 0.5em;
+  background: #7B7A8D;
+  border-radius: 5px;
+}

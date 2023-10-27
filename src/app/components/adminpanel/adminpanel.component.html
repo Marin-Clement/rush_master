@@ -1,0 +1,15 @@
+<div class="login-container" *ngIf="!login">
+  <div class="login-form">
+    <p class="form-label">Admin Panel</p>
+    <div class="login-separator"></div>
+    <form (ngSubmit)="submitLogin()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" class="form-input" required>
+      </div>
+      <button type="submit" class="form-button" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+    <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import {finalize} from "rxjs";
   styleUrls: ['./summonerheader.component.css']
 })
 export class SummonerheaderComponent implements OnInit {
+  @Input() inGame: boolean = true;
   @Input() summonerName: any;
   summonerStats: any;
   summonerInfo: any;
@@ -17,13 +18,13 @@ export class SummonerheaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSummonerStats();
+    console.log(this.getCurrentRoute());
   }
 
   getSummonerStats(): void {
     this.summonerService.getSummonerStats(this.summonerName)
       .pipe(
         finalize(() => {
-          console.log(this.summonerStats);
           this.getSummonerInfo();
         }
     ))
@@ -34,10 +35,13 @@ export class SummonerheaderComponent implements OnInit {
     this.summonerService.getSummonerInfo(this.summonerName)
       .pipe(
         finalize(() => {
-          console.log(this.summonerInfo);
           this.loading = false;
         }
     ))
     .subscribe(summoner => this.summonerInfo = summoner);
+  }
+
+  getCurrentRoute(): string {
+    return window.location.pathname;
   }
 }

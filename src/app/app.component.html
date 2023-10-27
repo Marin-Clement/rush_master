@@ -1,12 +1,20 @@
 <header class="Header">
   <div class="Header-main">
-    <img class="Header-logo" src="assets/images/logo.png" alt="logo" [routerLink]="['/']">
+    <img class="Header-logo" src="assets/images/logo.png" alt="logo">
     <h1 class="Header-title">Road To <span class="Header-title-Master">Master</span></h1>
   </div>
+  <nav class="nav-container">
+    <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" routerLinkActive="active">Leaderboard</a>
+    <p class="nav-separator">|</p>
+    <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About</a>
+    <p class="nav-separator">|</p>
+    <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+  </nav>
 </header>
 <section class="Container">
   <router-outlet></router-outlet>
 </section>
 <footer class="Footer">
   <p class="Footer-text">Made with <span class="Footer-text-Heart">♥</span> by <a class="Footer-link" href="https://github.com/Marin-Clement" target="_blank">Marin Clément</a></p>
+  <p class="Footer-riot">Road To Master isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</p>
 </footer>

@@ -1,9 +1,8 @@
-
-<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win }">
+<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win }" (click)="expanded = !expanded">
   <div class="game-general-info-container">
     <div class="game-general-info">
       <div class="game-general-info-time">
-        <span class="game-general-info-time-value">{{ gameCreation | timeAgo }}</span>
+        <span class="game-general-info-time-value">{{ (gameCreation + gameDuration * 1000) | timeAgo }}</span>
         <span class="game-general-info-time-value-duration">{{ gameDuration * 1000 | date:'mm:ss' }}</span>
       </div>
       <div class="game-general-info-win">
@@ -92,3 +91,7 @@
     </section>
   </section>
 </section>
+<section *ngIf="expanded" class="game-deep-info">
+  <app-gamedeepinfo [game]="game" [currentSummoner]="summonerName"></app-gamedeepinfo>
+</section>
+

@@ -16,6 +16,7 @@ export class GameComponent implements OnInit {
   @Input() game: Game | undefined;
   @Input() username: string | null = "";
   @Input() puuid: string | null = "";
+  expanded: boolean = false;
 
   summonerNames: { [key: number]: string } = {
     1: "SummonerBoost",

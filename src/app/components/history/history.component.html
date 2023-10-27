@@ -1,7 +1,7 @@
 <section class="header">
-    <app-summonerheader [summonerName]="username"></app-summonerheader>
+    <app-summonerheader [inGame]="isSummonerInGame(username)" [summonerName]="username"></app-summonerheader>
 </section>
-<section class="history-container">
+<section class="history-container" *ngIf="currentTab === 'overview'">
   <section class="history-stats">
     <app-summonerhistorystats [summonerName]="username"></app-summonerhistorystats>
   </section>
@@ -44,4 +44,7 @@
       </section>
     </ng-container>
   </section>
+</section>
+<section class="live-game-container" *ngIf="currentTab === 'live'">
+  <app-livegame [summonerName]="username"></app-livegame>
 </section>
