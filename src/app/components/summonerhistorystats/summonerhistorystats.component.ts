@@ -24,6 +24,7 @@ export class SummonerhistorystatsComponent implements OnInit {
   @Input() summonerName: string | null = "";
   loading: boolean = true;
   NoStats: boolean = true;
+  showAllChampions: boolean = false;
 
   summoner: string = "Summoner";
   numberOfGames: number = 0;
@@ -97,7 +98,6 @@ export class SummonerhistorystatsComponent implements OnInit {
         this.reorderChampionsByGamesPlayed();
       });
   }
-
   getColorForKDA(kda: number): string {
     if (kda >= 5) {
       return "rgb(253,154,0)";

@@ -101,6 +101,11 @@ form {
   height: 40px;
   background-color: #292964;
   color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 .button-container {
   display: flex;

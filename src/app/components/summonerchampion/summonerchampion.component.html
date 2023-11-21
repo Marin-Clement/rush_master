@@ -1,0 +1,75 @@
+<section class="table-container">
+  <table class="stats-table">
+    <thead>
+    <tr>
+      <th (click)="sort('name')" [class.active]="activeColumn === 'name'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Name</span>
+      </th>
+      <th (click)="sort('games')" [class.active]="activeColumn === 'games'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Games</span>
+      </th>
+      <th (click)="sort('kda')" [class.active]="activeColumn === 'kda'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">KDA</span>
+      </th>
+      <th (click)="sort('winrate')" [class.active]="activeColumn === 'winrate'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Winrate</span>
+      </th>
+      <th (click)="sort('maxKills')" [class.active]="activeColumn === 'maxKills'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Max Kills</span>
+      </th>
+      <th (click)="sort('maxDeaths')" [class.active]="activeColumn === 'maxDeaths'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Max Deaths</span>
+      </th>
+      <th (click)="sort('averageGoldEarned')" [class.active]="activeColumn === 'averageGoldEarned'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Avg Gold</span>
+      </th>
+      <th (click)="sort('averageDamageDealt')" [class.active]="activeColumn === 'averageDamageDealt'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Avg Damage</span>
+      </th>
+      <th (click)="sort('averageDamageTaken')" [class.active]="activeColumn === 'averageDamageTaken'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Avg Damage Taken</span>
+      </th>
+      <th (click)="sort('averageVisionScore')" [class.active]="activeColumn === 'averageVisionScore'">
+        <span [class.asc]="isAscending" [class.desc]="!isAscending">Avg Vision Score</span>
+      </th>
+      <th (click)="sort('doubleKills')" [class.active]="activeColumn === 'doubleKills'">
+        <span class="double-kill" [class.asc]="isAscending" [class.desc]="!isAscending">Double</span>
+      </th>
+      <th (click)="sort('tripleKills')" [class.active]="activeColumn === 'tripleKills'">
+        <span class="triple-kill" [class.asc]="isAscending" [class.desc]="!isAscending">Triple</span>
+      </th>
+      <th (click)="sort('quadraKills')" [class.active]="activeColumn === 'quadraKills'">
+        <span class="quadra-kill" [class.asc]="isAscending" [class.desc]="!isAscending">Quadra</span>
+      </th>
+      <th (click)="sort('pentaKills')" [class.active]="activeColumn === 'pentaKills'">
+        <span class="penta-kill" [class.asc]="isAscending" [class.desc]="!isAscending">Penta</span>
+      </th>
+    </tr>
+    </thead>
+    <tbody class="stats-table-body">
+    <tr *ngFor="let champion of filteredChampionStats">
+      <td [class.active]="activeColumn === 'name'">
+        <section class="champion-container">
+          <div class="champion-stats-image">
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ champion.name | fiddleStickException}}.png" alt="{{ champion.name }}" width="50" height="50" class="champion-stats-image">
+          </div>
+          <p class="champion-stats-name">{{ champion.name | monkeyKingExeception }}</p>
+        </section>
+      </td>
+      <td [class.active]="activeColumn === 'games'">{{ champion.games }}</td>
+      <td [class.active]="activeColumn === 'kda'" [ngStyle]="{'color': champion.kda > 4 ? 'orange' : champion.kda > 2 ? '#3173f9' : champion.kda < 1 ? '#da3232' : 'white'}">{{ champion.kda }}</td>
+      <td [class.active]="activeColumn === 'winrate'" [ngStyle]="{'color': champion.winrate > 60 ? 'orange' : champion.winrate > 50 ? '#6fe86f' : champion.winrate < 40 ? '#da3232' : 'white'}">{{ champion.winrate }}%</td>
+      <td [class.active]="activeColumn === 'maxKills'">{{ champion.maxKills }}</td>
+      <td [class.active]="activeColumn === 'maxDeaths'">{{ champion.maxDeaths }}</td>
+      <td [class.active]="activeColumn === 'averageGoldEarned'">{{ champion.averageGoldEarned }}</td>
+      <td [class.active]="activeColumn === 'averageDamageDealt'">{{ champion.averageDamageDealt }}</td>
+      <td [class.active]="activeColumn === 'averageDamageTaken'">{{ champion.averageDamageTaken }}</td>
+      <td [class.active]="activeColumn === 'averageVisionScore'">{{ champion.averageVisionScore }}</td>
+      <td [class.active]="activeColumn === 'doubleKills'" [ngStyle]="{'color': champion.doubleKills >= 1 ? '#CDDCFE' : 'white'}">{{ champion.doubleKills }}</td>
+      <td [class.active]="activeColumn === 'tripleKills'" [ngStyle]="{'color': champion.tripleKills >= 1 ? '#5AD1D9' : 'white'}">{{ champion.tripleKills }}</td>
+      <td [class.active]="activeColumn === 'quadraKills'" [ngStyle]="{'color': champion.quadraKills >= 1 ? '#00A6FF' : 'white'}">{{ champion.quadraKills }}</td>
+      <td [class.active]="activeColumn === 'pentaKills'" [ngStyle]="{'color': champion.pentaKills >= 1 ? '#FF9B00' : 'white'}">{{ champion.pentaKills }}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>

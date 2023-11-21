@@ -12,6 +12,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: card-appear 0.5s ease-in-out;
+  z-index: 0;
   animation-fill-mode: both;
 }
 .summoner-img-container {

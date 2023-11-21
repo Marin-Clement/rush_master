@@ -33,7 +33,7 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'admin',
+    path: 'adminpanel',
     component: AdminpanelComponent,
   },
   {

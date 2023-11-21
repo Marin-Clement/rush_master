@@ -389,6 +389,38 @@ p {
   margin-right: 10px;
   text-align: center;
 }
+.champion-stats-view-all-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+}
+.champion-stats-view-all-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1E1E4A;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.champion-stats-view-all-button:hover {
+  background-color: #0b59ff;
+}
+.champion-stats-view-all-button:active {
+  background-color: #0b59ff;
+}
 @media only screen and (max-height: 900px) {
   .champion-stats-container {
     padding: 10px;

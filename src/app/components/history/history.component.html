@@ -45,6 +45,10 @@
     </ng-container>
   </section>
 </section>
+<section class="champions-container" *ngIf="currentTab === 'champions'">
+  <app-summonerchampion [summonerName]="username"></app-summonerchampion>
+</section>
 <section class="live-game-container" *ngIf="currentTab === 'live'">
   <app-livegame [summonerName]="username"></app-livegame>
 </section>
+

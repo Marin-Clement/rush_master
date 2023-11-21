@@ -22,18 +22,38 @@
   width:90%;
   margin: 1em 0 0 0;
   padding:.2em 0;
-  border-right:.8em solid #29346d;
+  border-left:.4em solid #29346d;
   transition:.2s;
 }
 .game-container.lose{
   background:#3F233C;
-  border-right:.8em solid #e90b0b
+  border-left:.4em solid #e90b0b
 }
 .game-container.lose:hover{
   background:#cb3b3b8c
 }
 .game-container:hover{
   background:#242e62
+}
+.game-container.lose.remake{
+  background: #28282F;
+  border-left: .4em solid #9E9EB0;
+}
+.game-container.lose.remake:hover{
+  background: #28282F;
+}
+.game-container.win.remake{
+  background: #28282F;
+  border-left: .4em solid #9E9EB0;
+}
+.game-container.win.remake:hover{
+  background: #28282F;
+}
+.expend-button-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 8%
 }
 .game-general-info-container{
   display:flex;
@@ -55,9 +75,16 @@
 }
 .game-container>.game-general-info-container>.game-general-info{
   border-right:.2em dotted #2F6DEC
+
 }
 .game-container.lose>.game-general-info-container>.game-general-info{
   border-right:.2em dotted #e90b0b
+}
+.game-container.lose.remake>.game-general-info-container>.game-general-info{
+  border-right:.2em dotted #9E9EB0
+}
+.game-container.win.remake>.game-general-info-container>.game-general-info{
+  border-right:.2em dotted #9E9EB0
 }
 .game-general-info-time{
   display:flex;
@@ -100,7 +127,7 @@
 }
 .teams-container{
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
   width:40%
 }
 .summoner-stats-container{
@@ -155,7 +182,7 @@
 .team-container{
   display:flex;
   flex-direction:row;
-  align-items:center
+  align-items:center;
 }
 .team{
   display:flex;
@@ -170,10 +197,7 @@
   display:flex;
   flex-direction:row;
   align-items:center;
-  width:5em
-}
-.summoner-team-container:hover>.summoner-team-name{
-  border-left:.3em solid white
+  width:5em;
 }
 .summoner-summoner-champion-icon{
   width:2em;
@@ -181,15 +205,41 @@
   border-radius:12%;
   margin-right:.3em;
   margin-bottom:.1em;
-  transition:.2s
+  transition:.2s;
 }
 .summoner-team-name{
-  margin:0 .3em;
-  padding-left:.3em;
-  font-size:.6em;
-  color:#fff;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 40%;
   text-overflow: ellipsis;
-  text-decoration:none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  padding-bottom: .2em;
+  transition:.5s;
+}
+.summoner-team-container:hover>a{
+  border-bottom: 2px solid #fff
+}
+.feather-chevron-down{
+  width:1.5em;
+  height:1.5em;
+  stroke:#fff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
+  transition:.2s
+}
+.feather-chevron-up{
+  width:1.5em;
+  height:1.5em;
+  stroke:#fff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
   transition:.2s
 }
 
@@ -240,14 +290,11 @@
   .summoner-summoner-spell {
     display: none;
   }
-  .summoner-team-container {
-    width: 2em;
-  }
   .summoner-team-name {
-    font-size: .3em;
+    font-size: .5em;
   }
   .team {
-    margin-right: 3em;
-    width: 3em;
+    margin-right: 2em;
+    width: 4em;
   }
 }

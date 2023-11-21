@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from "../../interfaces/game.interface";
 import { SummonerService } from "../../services/summoner/summoner.service";
-import { catchError, of } from "rxjs";
 
 interface SummonerObj {
   puuid: string;
@@ -31,6 +30,7 @@ export class GameComponent implements OnInit {
   }
 
   win: boolean = false;
+  remake: boolean = false;
   items: number[] = [];
   summonersId: string[] = [];
   kills: number = 0;
@@ -53,12 +53,25 @@ export class GameComponent implements OnInit {
   constructor(private summonerService: SummonerService) { }
 
   ngOnInit(): void {
-    this.setGameInfo();
+    if (this.isRemake()) {
+      this.remake = true;
+      this.setGameInfo();
+    } else {
+      this.setGameInfo();
+    }
+  }
+
+  isRemake(): boolean {
+    const REMAKE_THRESHOLD = 180;
+
+    if (this.game) {
+      return this.game.info.gameDuration < REMAKE_THRESHOLD;
+    }
+    return false;
   }
 
   setGameInfo(): void {
     if (this.game && this.puuid) {
-      // Use this.puuid for fetching game-related data instead of a summoner name
       const currentUserParticipant = this.game.info.participants.find(participant => participant.puuid === this.puuid);
 
       if (currentUserParticipant) {

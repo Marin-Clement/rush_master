@@ -9,8 +9,11 @@
     <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About</a>
     <p class="nav-separator">|</p>
     <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+    <p *ngIf="admin" class="nav-separator">|</p>
+    <a *ngIf="admin" class="nav-link-admin" [routerLink]="['/adminpanel']" routerLinkActive="active">Admin</a>
   </nav>
 </header>
+<app-radio></app-radio>
 <section class="Container">
   <router-outlet></router-outlet>
 </section>

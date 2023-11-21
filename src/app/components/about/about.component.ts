@@ -9,4 +9,8 @@ export class AboutComponent {
   goToTop() {
     document.documentElement.scrollTop = 0;
   }
+
+  constructor() {
+    document.title = 'About - RoadMaster';
+  }
 }

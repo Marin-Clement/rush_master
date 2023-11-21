@@ -1,5 +1,22 @@
 <section class="game-container">
-  <section class="team1">
+  <section class="team1" [ngClass]="isRemake() ? 'remake' : ''">
+    <section class="info-header">
+      <div class="header-summoner-info">
+        <p class="header-summoner-info-item">Summoner</p>
+      </div>
+      <div class="header-summoner-kda">
+        <p class="header-summoner-kda-item">K/D/A</p>
+      </div>
+      <div class="header-summoner-damage">
+        <p class="header-summoner-damage-item">Damage Dealt</p>
+      </div>
+      <div class="header-summoner-damage-taken">
+        <p class="header-summoner-damage-taken-item">Damage Taken</p>
+      </div>
+      <div class="header-summoner-items">
+        <p class="header-summoner-items-item">Items</p>
+      </div>
+    </section>
     <ng-container *ngFor="let summoner of team1">
       <div class="summoner" [ngClass]="currentSummoner === summoner.summonerName ? 'current-summoner' : ''">
         <div class="main-info">
@@ -114,7 +131,65 @@
       </div>
     </ng-container>
   </section>
-  <section class="team2">
+  <section class="game-objective-container">
+    <section class="team1-objective-container">
+      <div class="team-1-baron">
+        <p class="team-1-baron-item">Baron:</p>
+        <p class="team-1-baron-item">{{ game.info.teams[0].objectives.baron.kills }}</p>
+      </div>
+      <div class="team-1-dragon">
+        <p class="team-1-dragon-item">Dragon:</p>
+        <p class="team-1-dragon-item">{{ game.info.teams[0].objectives.dragon.kills }}</p>
+      </div>
+      <div class="team-1-tower">
+        <p class="team-1-tower-item">Tower:</p>
+        <p class="team-1-tower-item">{{ game.info.teams[0].objectives.tower.kills }}</p>
+      </div>
+    </section>
+    <section class="game-info">
+      <div class="total-kill-bar">
+        <p class="total-kill-bar-item">Total Kills</p>
+        <div class="total-kill-bar-fill-1" [style.width.%]="game.info.teams[0].objectives.champion.kills / (game.info.teams[0].objectives.champion.kills + game.info.teams[1].objectives.champion.kills) * 100">
+          <p class="total-kill-bar-fill-1-item">{{ game.info.teams[0].objectives.champion.kills }}</p>
+        </div>
+        <div class="total-kill-bar-fill-2" [style.width.%]="game.info.teams[1].objectives.champion.kills / (game.info.teams[0].objectives.champion.kills + game.info.teams[1].objectives.champion.kills) * 100">
+          <p class="total-kill-bar-fill-2-item">{{ game.info.teams[1].objectives.champion.kills }}</p>
+        </div>
+      </div>
+    </section>
+    <section class="team2-objective-container">
+      <div class="team-2-baron">
+        <p class="team-2-baron-item">Baron:</p>
+        <p class="team-2-baron-item">{{ game.info.teams[1].objectives.baron.kills }}</p>
+      </div>
+      <div class="team-2-dragon">
+        <p class="team-2-dragon-item">Dragon:</p>
+        <p class="team-2-dragon-item">{{ game.info.teams[1].objectives.dragon.kills }}</p>
+      </div>
+      <div class="team-2-tower">
+        <p class="team-2-tower-item">Tower:</p>
+        <p class="team-2-tower-item">{{ game.info.teams[1].objectives.tower.kills }}</p>
+      </div>
+    </section>
+  </section>
+  <section class="team2" [ngClass]="isRemake() ? 'remake' : ''">
+    <section class="info-header">
+      <div class="header-summoner-info">
+        <p class="header-summoner-info-item">Summoner</p>
+      </div>
+      <div class="header-summoner-kda">
+        <p class="header-summoner-kda-item">K/D/A</p>
+      </div>
+      <div class="header-summoner-damage">
+        <p class="header-summoner-damage-item">Damage Dealt</p>
+      </div>
+      <div class="header-summoner-damage-taken">
+        <p class="header-summoner-damage-taken-item">Damage Taken</p>
+      </div>
+      <div class="header-summoner-items">
+        <p class="header-summoner-items-item">Items</p>
+      </div>
+    </section>
     <ng-container *ngFor="let summoner of team2">
       <div class="summoner" [ngClass]="currentSummoner === summoner.summonerName ? 'current-summoner' : ''">
         <div class="main-info">

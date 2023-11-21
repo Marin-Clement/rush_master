@@ -1,4 +1,4 @@
-<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win }" (click)="expanded = !expanded">
+<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win, 'remake': remake }" (click)="expanded = !expanded">
   <div class="game-general-info-container">
     <div class="game-general-info">
       <div class="game-general-info-time">
@@ -6,7 +6,7 @@
         <span class="game-general-info-time-value-duration">{{ gameDuration * 1000 | date:'mm:ss' }}</span>
       </div>
       <div class="game-general-info-win">
-        <span class="game-general-info-win-value" [ngStyle]="{ color: win ? '#2F6DEC' : 'rgb(255, 77, 77)' }">{{ win ? 'Victory' : 'Defeat' }}</span>
+        <span class="game-general-info-win-value" [ngStyle]="{ color: win ? '#2F6DEC' : remake ? '#9E9EB0' : '#ff4d4d' }">{{ win ? 'Victory' : remake ? 'Remake' : 'Defeat' }}</span>
       </div>
     </div>
     <div class="summoner-image-summoner-container">
@@ -88,10 +88,13 @@
           </ng-container>
         </div>
       </section>
+      <div class="expend-button-container">
+        <svg *ngIf="!expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <svg *ngIf="expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </div>
     </section>
   </section>
 </section>
 <section *ngIf="expanded" class="game-deep-info">
   <app-gamedeepinfo [game]="game" [currentSummoner]="summonerName"></app-gamedeepinfo>
 </section>
-

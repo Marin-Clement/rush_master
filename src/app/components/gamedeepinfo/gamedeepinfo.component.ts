@@ -22,6 +22,15 @@ export class GamedeepinfoComponent implements OnInit{
     this.SetMaxDamage();
   }
 
+  isRemake(): boolean {
+    const REMAKE_THRESHOLD = 180;
+
+    if (this.game) {
+      return this.game.info.gameDuration < REMAKE_THRESHOLD;
+    }
+    return false;
+  }
+
   SetTeams() {
     if (this.game) {
       this.team1 = this.game.info.participants.filter((participant: any) => participant.teamId === 100);

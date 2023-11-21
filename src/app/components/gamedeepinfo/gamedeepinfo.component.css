@@ -18,6 +18,15 @@
   height: 100%;
   border-radius: 5px;
 }
+.team1>.info-header {
+  margin-top: 1rem;
+}
+.team1.remake>.info-header {
+  background: #5e5e61;
+}
+.team2.remake>.info-header {
+  background: #5e5e61;
+}
 .team1 .summoner {
   display: flex;
   flex-direction: row;
@@ -31,8 +40,27 @@
   border-left: 6px solid #2F6DEC;
   background-color: #1C224A;
 }
+.team1 .summoner:last-child {
+  border-bottom: none;
+}
 .team1 .summoner.current-summoner {
   background-color: #283062;
+}
+.team1.remake .summoner {
+  background-color: #28282F;
+  border-left: 6px solid #7B7A8E;
+  border-bottom: 1px solid #7B7A8E;
+}
+.team2.remake .summoner {
+  background-color: #28282F;
+  border-left: 6px solid #7B7A8E;
+  border-bottom: 1px solid #7B7A8E;
+}
+.team1.remake .summoner.current-summoner {
+  background-color: #4d4c5a;
+}
+.team2.remake .summoner.current-summoner {
+  background-color: #4d4c5a;
 }
 .team2 .summoner.current-summoner {
   background-color: #5b3a57;
@@ -61,6 +89,9 @@
   border-left: 6px solid #941c1c;
   background-color: #3F233C;
 }
+.team2 .summoner:last-child {
+  border-bottom: none;
+}
 .summoner-summoner-champion-icon {
   width: 2.5em;
   height: 2.5em;
@@ -71,6 +102,10 @@
   font-size: 0.8rem;
   font-weight: 600;
   margin-left: 1rem;
+  width: 40%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .main-info {
   display: flex;
@@ -188,4 +223,224 @@
   height: 0.5em;
   background: #7B7A8D;
   border-radius: 5px;
+}
+.info-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  background: #131837;
+}
+.header-summoner-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  border-radius: 5px;
+}
+.header-summoner-info-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.header-summoner-kda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 12%;
+  height: 100%;
+  border-radius: 5px;
+}
+.header-summoner-kda-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.header-summoner-damage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 5px;
+}
+.header-summoner-damage-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.header-summoner-damage-taken {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 5px;
+}
+.header-summoner-damage-taken-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.header-summoner-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  border-radius: 5px;
+}
+.header-summoner-items-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.game-objective-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 1rem 0;
+  background: #121946;
+}
+.team1-objective-container,
+.team2-objective-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  width: 33%;
+  height: 50%;
+  border-radius: 5px;
+}
+.team1-objective-container {
+  background: #2F6DEC;
+}
+.team2-objective-container {
+  background: #941c1c;
+}
+.team-1-baron,
+.team-2-baron {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 5px;
+}
+.team-1-baron-item,
+.team-2-baron-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.team-1-dragon,
+.team-2-dragon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 5px;
+}
+.team-1-dragon-item,
+.team-2-dragon-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.team-1-tower,
+.team-2-tower {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-radius: 5px;
+}
+.team-1-tower-item,
+.team-2-tower-item {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.2rem;
+}
+.game-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+.total-kill-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1em;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+}
+.total-kill-bar-fill-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  height: 1.5em;
+  background: #2F6DEC;
+}
+.total-kill-bar-fill-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  height: 1.5em;
+  background: #941c1c;
+}
+.total-kill-bar-item {
+  position: absolute;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+}
+.total-kill-bar-fill-1-item {
+  position: absolute;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
+}
+.total-kill-bar-fill-2-item {
+  position: absolute;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0 0.5rem;
 }

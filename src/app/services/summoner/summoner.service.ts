@@ -56,13 +56,13 @@ export class SummonerService {
   getLiveGameInfo(): Observable<any> {
     const url = `${this._apiUrl}/playersInGame`;
 
-    if (this.cache.has(url)) {
-      return of(this.cache.get(url));
-    }
+    // if (this.cache.has(url)) {
+    //   return of(this.cache.get(url));
+    // }
 
     const request = this.http.get<any>(url, { responseType: 'json', headers: { 'API-KEY': 'bad211b2bea4479050e75170912551ad'} });
 
-    request.subscribe(data => this.cache.set(url, data));
+    // request.subscribe(data => this.cache.set(url, data));
 
     return request;
   }

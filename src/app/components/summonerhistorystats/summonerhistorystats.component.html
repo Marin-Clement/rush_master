@@ -44,13 +44,13 @@
   </div>
 
   <h1 class="champion-stats-title">Champion Stats</h1>
-  <ng-container *ngFor="let champion of championStats, let i = index">
+  <ng-container *ngFor="let champion of championStats.slice(0, 7); let i = index">
     <div class="champion-stats">
       <div class="champion-base-stats">
         <div class="champion-stats-image">
           <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ champion.name | fiddleStickException}}.png" alt="{{ champion.name }}" width="50" height="50" class="champion-stats-image">
         </div>
-        <p class="champion-stats-name">{{ champion.name }}</p>
+        <p class="champion-stats-name">{{ champion.name | monkeyKingExeception }}</p>
       </div>
       <div class="champion-kda-stats">
         <p [ngStyle]="{'color': getColorForKDA(champion.kda)}" class="champion-stats-kda">{{ champion.kda }} KDA</p>
@@ -72,7 +72,10 @@
     </div>
     <div class="champion-stats-divider"></div>
   </ng-container>
-</section>
+  <section class="champion-stats-view-all-container">
+    <button [routerLink]="['../champions']" class="champion-stats-view-all-button">View more</button>
+  </section>
+  </section>
 <section *ngIf="NoStats" class="no-stats-container">
   <img class="no-stats-img" src="assets/images/error.png" alt="No Stats Found" width="200" height="200">
   <h1 class="no-stats-title">No Stats Found</h1>

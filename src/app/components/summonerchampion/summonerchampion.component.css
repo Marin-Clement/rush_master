@@ -1,0 +1,123 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #191937;
+  width: 80%;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+.stats-table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #191937;
+  border-radius: 0.5rem;
+  border: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.stats-table-body {
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.stats-table th {
+  background-color: #191937;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.stats-table th, .stats-table td {
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.stats-table tbody tr{
+  background-color: #f5f5f5;
+}
+
+.stats-table tbody tr:nth-child(odd) {
+  background-color: #111129;
+}
+.stats-table tbody tr:nth-child(even) {
+  background-color: #191937;
+}
+.stats-table td {
+  border: none;
+  color: white;
+}
+th.active span.asc {
+  color: #da3232;
+}
+th.active span.desc {
+  color: #6fe86f;
+}
+th.active span.asc::before {
+  content: '↓';
+
+}
+th.active span.desc::before {
+  content: '↑';
+}
+
+.stats-table tbody tr:nth-child(odd) .active {
+  background-color: #202042;
+  color: white;
+}
+.stats-table tbody tr:nth-child(even) .active {
+  background-color: #25254B;
+  color: white;
+}
+.champion-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+.champion-stats-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+.champion-stats-image img {
+  scale: 1.2;
+}
+.KDA-content {
+  color: white;
+  font-size: 2rem;
+}
+.KDA-details-content {
+  font-size: 0.5rem;
+}
+.double-kill {
+  color: #CDDCFE;
+}
+.triple-kill {
+  color: #5AD1D9;
+}
+.quadra-kill {
+  color: #00A6FF;
+}
+.penta-kill {
+  color: #FF9B00;
+}

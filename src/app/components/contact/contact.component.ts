@@ -15,6 +15,7 @@ export class ContactComponent {
   private lastMessageSentTime: number = 0;
 
   constructor() {
+    document.title = 'Contact - RoadMaster';
     // Initialize the lastMessageSentTime from localStorage
     const lastMessageSentTime = localStorage.getItem('lastMessageSentTime');
     if (lastMessageSentTime) {
