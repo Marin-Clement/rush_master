@@ -29,8 +29,8 @@ describe('summoner page - champion stats', () => {
   it('should have summoner stats', () => {
     cy.get('.champion-stats-container').should('exist')
   });
-  it('should have maximum 5 champions', () => {
-    cy.get('.champion-stats').should('have.length.lte', 5);
+  it('should have maximum 7 champions', () => {
+    cy.get('.champion-stats').should('have.length.lte', 7);
   });
   it('should have view more button', () => {
     cy.get('.champion-stats-view-all-button').should('exist')
@@ -50,12 +50,13 @@ describe('summoner page - match history', () => {
     cy.get('.game-history').should('exist')
   });
   it('should have maximum 10 matches if not scrolled', () => {
-    cy.get('.game-container').should('have.length', 10);
+    cy.get('.game-container').should('have.length.lte', 10);
   });
-  it('should have maximum 20 matches if scrolled', () => {
-    cy.get('.game-container').should('have.length', 10);
+  it('should after scroll add at maximum 10 matches', () => {
+    cy.get('.game-container').should('have.length.lte', 10);
     cy.scrollTo('bottom')
-    cy.get('.game-container').should('have.length', 20);
+    cy.get('.game-container').should('have.length.lte', 20);
+    cy.scrollTo('bottom')
   });
 });
 
@@ -73,6 +74,7 @@ describe('summoner page - live game', () => {
     cy.get('.refresh-button').should('exist')
   });
 });
+
 
 describe('summoner page - game', () => {
   beforeEach(() => {

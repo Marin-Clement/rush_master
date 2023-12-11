@@ -13,15 +13,18 @@
   border-top: 3px solid #3272F9FF;
   border-bottom: 3px solid #3272F9FF;
 }
+
 .summoner-img-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
+
 .summoner-img-container:hover .summoner-ingame {
   scale: 1.3;
 }
+
 .summoner-img {
   width: 200px;
   height: 200px;
@@ -46,6 +49,7 @@
     transform: scale(1);
   }
 }
+
 .summoner-name {
   font-size: 4em;
   font-weight: bold;
@@ -63,22 +67,26 @@
   width: 100%;
   color: white;
 }
+
 .rank-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .rank-container p {
   font-size: 4em;
   font-weight: bold;
   color: #fff;
   margin: 0 10px 0 10px;
 }
+
 .summoner-rank-img {
   width: 200px;
   height: 200px;
   margin-right: 10px;
 }
+
 .tab-nav-container {
   display: flex;
   justify-content: flex-start;
@@ -88,6 +96,7 @@
   color: white;
   border-bottom: 3px solid #3272F9FF;
 }
+
 .nav-item {
   display: flex;
   justify-content: center;
@@ -101,36 +110,44 @@
   padding: 5px 10px 5px 10px;
   transition: all 0.2s ease-in-out;
 }
+
 .nav-item:hover {
   background-color: #3272F9FF;
 }
+
 .nav-item.active {
   background-color: #3272F9FF;
   cursor: default;
   transition: all 0.2s ease-in-out;
 }
+
 .nav-item.active:hover {
   background-color: #3272F9FF;
 }
+
 .nav-item.ingame {
   background-color: #d22222;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+
 .nav-item.active.ingame {
   background-color: #b21515;
 }
+
 .nav-item.ingame:hover {
   background-color: #b21515;
 }
+
 .nav-item.ingame:hover .summoner-ingame {
   scale: 1.2;
 }
+
 .summoner-ingame {
   position: absolute;
   margin-left: 10px;
   top: 21em;
-  right:50.5%;
+  right: 50.5%;
   width: 75px;
   height: 25px;
   rotate: 20deg;
@@ -147,6 +164,7 @@
   pointer-events: all;
   transition: all 0.2s ease-in-out;
 }
+
 .nav-link {
   font-size: 1.5em;
   font-weight: bold;
@@ -154,54 +172,70 @@
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
+
 .irons {
   border: 5px solid #5e5e5e;
 }
+
 .bronze {
   border: 5px solid #8C523A;
 }
+
 .silver {
   border: 5px solid #C0C0C0;
 }
+
 .gold {
   border: 5px solid #CD8837;
 }
+
 .platinum {
   border: 5px solid #25ACD6;
 }
+
 .emerald {
   border: 5px solid #50c878;
 }
+
 .diamond {
   border: 5px solid #8140EA;
 }
+
 .master {
   border: 5px solid #DB58F4;
 }
+
 .grandmaster {
   border: 5px solid #CD4544;
 }
+
 .challenger {
   border: 5px solid #F4C874;
 }
-@media only screen and (max-height: 900px){
+
+@media only screen and (max-height: 900px) {
   .summoner-container {
     height: 200px;
     width: 70rem;
   }
+
   .summoner-img {
     width: 150px;
     height: 150px;
   }
+
   .summoner-name {
     font-size: 3em;
   }
+
   .summoner-stats-container {
     margin-left: 10px;
   }
+
   .rank-container p {
     font-size: 3em;
   }
+
   .summoner-rank-img {
     width: 150px;
     height: 150px;

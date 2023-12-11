@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SummonerheaderComponent } from './summonerheader.component';
+import {SummonerheaderComponent} from './summonerheader.component';
 
 describe('SummonerheaderComponent', () => {
   let component: SummonerheaderComponent;

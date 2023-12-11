@@ -11,6 +11,7 @@ import {
 import {
   AfterViewInit
 } from '@angular/core';
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-radio',
@@ -25,14 +26,15 @@ export class RadioComponent implements AfterViewInit {
   private audioSource!: AudioBufferSourceNode;
   private gainNode!: GainNode;
 
-  isCollapsed = true;
+  isRadioUp: boolean = false;
+  isCollapsed: boolean = true;
 
   currentImage: string = '';
   currentSong: string = '';
   elapsedTime: number = 0;
   songDuration: number = 0;
   progress: number = 0;
-  volume: number = 1;
+  volume: number = 0.5;
   timeSyncThreshold: number = 5;
   isPlaying: boolean = false;
   musicChange: boolean = false;
@@ -72,18 +74,18 @@ export class RadioComponent implements AfterViewInit {
   private playAudioFromPosition(position: number) {
     this.audioSource.start(0, position);
   }
-
   ngAfterViewInit() {
     this.socket = io('http://localhost:3002');
 
     this.socket.on('play', (data: any) => {
-      this.musicChange = true;
-      this.currentSong = data.song;
+      this.isRadioUp = !!data.song;
       this.audioContext = new AudioContext();
       this.audioContext.suspend();
-      this.loadAudio(`http://localhost:3002/stream/${this.currentSong}`);
+      this.musicChange = true;
+      this.currentSong = data.song;
       this.songDuration = data.duration;
-      this.currentImage = data.image; // Update the currentImage property
+      this.currentImage = data.image;
+      this.loadAudio(`http://localhost:3002/stream/${this.currentSong}`);
     });
 
     this.socket.on('time', (data: any) => {
@@ -105,9 +107,6 @@ export class RadioComponent implements AfterViewInit {
         this.musicChange = false;
         this.playAudio(this.elapsedTime);
       }
-      console.log(this.elapsedTime);
-      console.log(this.songDuration);
-      console.log(this.audioContext.state);
     });
   }
 
@@ -117,30 +116,32 @@ export class RadioComponent implements AfterViewInit {
       .then(data => this.audioContext.decodeAudioData(data))
       .then(buffer => {
         this.audioBuffer = buffer;
-        this.createAudioNodes(); // Call createAudioNodes here to set up initial nodes
+        this.createAudioNodes();
       })
       .catch(error => console.error('Error loading audio:', error));
   }
 
   playPause() {
 
-    if (this.audioContext.state === 'suspended') {
+    if ((this.audioContext.state) === 'suspended') {
       this.playAudio(this.elapsedTime);
       this.audioContext.resume();
       this.isPlaying = true;
-    }else if (this.audioContext.state === 'running') {
+    } else if (this.audioContext.state === 'running') {
       this.audioContext.suspend();
       this.isPlaying = false;
+    } else {
+      this.playAudio(this.elapsedTime);
+      this.isPlaying = true;
     }
   }
 
-
   updateVolume(): void {
-    // Update the volume directly from the slider value
     if (this.audioContext && this.gainNode) {
       this.gainNode.gain.value = this.volume;
     }
   }
+
 
   formatTime(seconds: number): string {
     const minutes = Math.floor(seconds / 60);
@@ -150,13 +151,19 @@ export class RadioComponent implements AfterViewInit {
     return `${formattedMinutes}:${formattedSeconds}`;
   }
 
-  //replace _ with space and remove .mp3
   formatTitle(title: string): string {
     return title.replace(/_/g, ' ').replace('.mp3', '');
   }
 
   collapse() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  onKeyPress(event: KeyboardEvent) {
+    if (event.code === 'Space') {
+      this.playPause();
+      event.preventDefault();
+    }
   }
 
   previousPlaylist() {

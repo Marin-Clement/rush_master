@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Game } from "../../interfaces/game.interface";
-import { SummonerService } from "../../services/summoner/summoner.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {Game} from "../../interfaces/game.interface";
+import {SummonerService} from "../../services/summoner/summoner.service";
 
 interface SummonerObj {
   puuid: string;
@@ -50,15 +50,11 @@ export class GameComponent implements OnInit {
   team1Champs: string[] = [];
   team2Champs: string[] = [];
 
-  constructor(private summonerService: SummonerService) { }
+  constructor(private summonerService: SummonerService) {
+  }
 
   ngOnInit(): void {
-    if (this.isRemake()) {
-      this.remake = true;
-      this.setGameInfo();
-    } else {
-      this.setGameInfo();
-    }
+    this.setGameInfo();
   }
 
   isRemake(): boolean {
@@ -75,7 +71,11 @@ export class GameComponent implements OnInit {
       const currentUserParticipant = this.game.info.participants.find(participant => participant.puuid === this.puuid);
 
       if (currentUserParticipant) {
-        this.win = currentUserParticipant.win;
+        if (this.isRemake()) {
+          this.remake = true;
+        } else {
+          this.win = currentUserParticipant.win;
+        }
         this.items = [
           currentUserParticipant.item0,
           currentUserParticipant.item1,
@@ -95,8 +95,7 @@ export class GameComponent implements OnInit {
         this.visionScore = currentUserParticipant.visionScore;
         if (this.deaths === 0) {
           this.kda = ((this.kills + this.assists)).toFixed(2);
-        }
-      else {
+        } else {
           this.kda = ((this.kills + this.assists) / this.deaths).toFixed(2);
         }
         this.totalMinionsKilled = currentUserParticipant.totalMinionsKilled;

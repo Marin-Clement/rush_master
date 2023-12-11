@@ -1,5 +1,4 @@
-<!-- In your component's HTML template -->
-<ng-container *ngIf="summoners">
+<ng-container *ngIf="!loading">
   <section class="summoner-list">
     <ng-container *ngFor="let summoner of summoners.summonerNames; let i = index">
       <ng-container *ngIf="summonerStats[i]">

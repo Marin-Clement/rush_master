@@ -107,7 +107,7 @@ export class AdminpanelComponent implements OnInit {
 
   addSummoner(): void {
     if (!this.status.IsApiKeyValid) {
-      this.addMessagePopup('error', 'Summoner not added', 'API key is invalid');
+      this.addMessagePopup('error', 'Summoner not added', 'API Error');
       return;
     }
 

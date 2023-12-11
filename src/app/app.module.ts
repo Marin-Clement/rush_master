@@ -21,7 +21,7 @@ import {FormsModule} from "@angular/forms";
 import { GamedeepinfoComponent } from './components/gamedeepinfo/gamedeepinfo.component';
 import { AdminpanelComponent } from './components/adminpanel/adminpanel.component';
 import { SummonerchampionComponent } from './components/summonerchampion/summonerchampion.component';
-import { MonkeyKingExeceptionPipe } from './pipes/mokeyKing/monkey-king-exeception.pipe';
+import { MonkeyKingExeceptionPipe } from './pipes/monkeyKing/monkey-king-exeception.pipe';
 import { RadioComponent } from './components/radio/radio.component';
 
 @NgModule({

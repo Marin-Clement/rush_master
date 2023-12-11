@@ -6,6 +6,7 @@
   height: 100%;
   animation: come-from-bottom 0.5s ease-in-out;
 }
+
 @keyframes come-from-bottom {
   0% {
     transform: translateY(25%);
@@ -16,6 +17,7 @@
     opacity: 1;
   }
 }
+
 .team {
   display: flex;
   flex-direction: column;
@@ -23,13 +25,16 @@
   justify-content: center;
   height: 100%;
 }
+
 .team:nth-child(2) .summoner {
   flex-direction: row-reverse;
   border-bottom: 2px solid #ff4655;
 }
+
 .team:nth-child(2) .summoner .main-summoner-champion-container {
   flex-direction: row-reverse;
 }
+
 .summoner {
   background: #1e1e4a;
   display: flex;
@@ -43,6 +48,7 @@
   color: #fff;
   margin-bottom: 0.5em;
 }
+
 .main-summoner-info {
   display: flex;
   flex-direction: column;
@@ -51,16 +57,20 @@
   height: 100%;
   width: 12em;
 }
+
 .main-summoner-info:hover .summoner-icon {
   transform: scale(1.1);
 }
+
 .main-summoner-info:hover .summoner-name {
   color: #3272f9;
 }
+
 a {
   text-decoration: none;
   color: #fff;
 }
+
 .main-summoner-champion-container {
   display: flex;
   flex-direction: row;
@@ -69,6 +79,7 @@ a {
   height: 100%;
   width: 12em;
 }
+
 .main-summoner-spells {
   display: flex;
   flex-direction: column;
@@ -77,6 +88,7 @@ a {
   margin: 0.5em;
   height: 100%;
 }
+
 .summoner-icon {
   height: 3em;
   width: 3em;
@@ -84,12 +96,14 @@ a {
   margin-bottom: 0.5em;
   transition: 0.2s ease-in-out;
 }
+
 .summoner-name {
   font-size: 0.8em;
   font-weight: bold;
   text-align: center;
   transition: 0.2s ease-in-out;
 }
+
 .summoner-name-active {
   color: #ff9b00;
 }
@@ -102,6 +116,7 @@ a {
   margin-bottom: 0.5em;
   height: 100%;
 }
+
 .refresh-button {
   display: flex;
   flex-direction: row;
@@ -116,14 +131,17 @@ a {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
+
 .refresh-button:hover {
   background: #3272f9;
 }
+
 .refresh-button:active {
   background: #1e1e4a;
   border: 2px solid #3272f9;
   transform: scale(0.95);
 }
+
 .refresh-button-text {
   font-size: 0.7em;
   font-weight: bold;
@@ -131,12 +149,14 @@ a {
   color: #fff;
   transition: 0.2s ease-in-out;
 }
+
 .game-time {
   font-size: 1em;
   font-weight: bold;
   color: #fff;
   margin-right: 0.5em;
 }
+
 .no-live-game {
   display: flex;
   flex-direction: column;
@@ -149,14 +169,15 @@ a {
   border-radius: 2em;
   color: #fff;
   text-align: center;
-  animation: come-from-bottom 0.5s ease-in-out;
 }
+
 .error-img {
   height: 20em;
   width: 20em;
   margin-bottom: 0.5em;
   border-radius: 20%;
 }
+
 .no-live-game p {
   font-size: 1.5em;
   font-weight: bold;

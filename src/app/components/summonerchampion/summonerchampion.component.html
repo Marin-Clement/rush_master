@@ -1,5 +1,5 @@
 <section class="table-container">
-  <table class="stats-table">
+  <table class="stats-table" *ngIf="championStats.length > 0">
     <thead>
     <tr>
       <th (click)="sort('name')" [class.active]="activeColumn === 'name'">
@@ -72,4 +72,9 @@
     </tr>
     </tbody>
   </table>
+  <div class="no-champion-found" *ngIf="championStats.length === 0">
+    <img class="error-img" ngSrc="assets/images/error.png" alt="error" width="200" height="200">
+    <p> No champion found </p>
+    <p> {{ summonerName }} has not played any ranked games in the last 30 days </p>
+  </div>
 </section>

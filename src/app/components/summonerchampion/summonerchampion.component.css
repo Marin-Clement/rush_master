@@ -121,3 +121,31 @@ th.active span.desc::before {
 .penta-kill {
   color: #FF9B00;
 }
+
+.no-champion-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #17173d;
+  padding: 1em;
+  border-radius: 2em;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  animation: come-from-bottom 0.5s ease-in-out;
+}
+
+.error-img {
+  height: 20em;
+  width: 20em;
+  margin-bottom: 0.5em;
+  border-radius: 20%;
+}
+
+.no-live-game p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

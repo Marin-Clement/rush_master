@@ -1,5 +1,5 @@
 <section class="header">
-    <app-summonerheader [inGame]="isSummonerInGame(username)" [summonerName]="username"></app-summonerheader>
+  <app-summonerheader [inGame]="isSummonerInGame(username)" [summonerName]="username"></app-summonerheader>
 </section>
 <section class="history-container" *ngIf="currentTab === 'overview'">
   <section class="history-stats">
@@ -10,7 +10,7 @@
       <section class="no-games">
         <img ngSrc="assets/images/error.png" alt="No games found" height="200" width="200">
         <h2>No games found !</h2>
-        <p>This Player has no games in his match history</p>
+        <p> {{ username }} has no games in the last 30 days.</p>
       </section>
     </ng-container>
     <ng-container *ngIf="!noGamesFound">

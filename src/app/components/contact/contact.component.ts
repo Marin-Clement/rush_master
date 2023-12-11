@@ -22,7 +22,7 @@ export class ContactComponent {
       this.lastMessageSentTime = parseInt(lastMessageSentTime, 10);
     }
   }
-
+  
   submitForm() {
     const currentTime = Date.now();
 
@@ -97,14 +97,14 @@ export class ContactComponent {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
       .then(response => {
         if (response.ok) {
           this.successMessage = 'Your message has been sent!';
           this.errorMessage = '';
-          this.lastMessageSentTime = currentTime; // Update the last message sent time
-          localStorage.setItem('lastMessageSentTime', this.lastMessageSentTime.toString()); // Store it in localStorage
+          this.lastMessageSentTime = currentTime;
+          localStorage.setItem('lastMessageSentTime', this.lastMessageSentTime.toString());
         } else {
           this.errorMessage = 'Something went wrong. Please try again later.';
           this.successMessage = '';

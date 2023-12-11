@@ -1,30 +1,36 @@
 <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
 <section class="summoner-container" *ngIf="!loading">
   <div class="summoner-img-container">
-  <img class="summoner-img" [ngClass]="summonerStats.tier | lowercase" ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{ summonerInfo.iconId }}.png" alt="summoner icon" width="100" height="100" priority="true">
+    <img class="summoner-img" [ngClass]="summonerStats.tier | lowercase"
+         ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{ summonerInfo.iconId }}.png"
+         alt="summoner icon" width="100" height="100" priority="true">
   </div>
   <p class="summoner-name">{{ summonerName }}</p>
   <div class="summoner-stats-container">
     <div class="rank-container">
-      <ng-container *ngIf="summonerStats.tier === 'MASTER' || summonerStats.tier === 'GRANDMASTER' || summonerStats.tier === 'CHALLENGER'">
+      <ng-container
+        *ngIf="summonerStats.tier === 'MASTER' || summonerStats.tier === 'GRANDMASTER' || summonerStats.tier === 'CHALLENGER'">
         <p class="summoner-rank">{{ summonerStats.tier | titlecase }}</p>
       </ng-container>
-      <ng-container *ngIf="summonerStats.tier !== 'MASTER' && summonerStats.tier !== 'GRANDMASTER' && summonerStats.tier !== 'CHALLENGER'">
+      <ng-container
+        *ngIf="summonerStats.tier !== 'MASTER' && summonerStats.tier !== 'GRANDMASTER' && summonerStats.tier !== 'CHALLENGER'">
         <p class="summoner-rank">{{ summonerStats.tier | titlecase }} {{ summonerStats.rank }}</p>
       </ng-container>
-      <img class="summoner-rank-img" ngSrc="assets/images/ranked-emblems/{{ summonerStats.tier | lowercase }}.jpeg" alt="ranked emblem" width="100" height="100" priority="true">
+      <img class="summoner-rank-img" ngSrc="assets/images/ranked-emblems/{{ summonerStats.tier | lowercase }}.jpeg"
+           alt="ranked emblem" width="100" height="100" priority="true">
     </div>
   </div>
 </section>
 <nav class="tab-nav-container" *ngIf="!loading">
-    <div class="nav-item" [routerLink]="['/summoner', summonerName, 'overview']" routerLinkActive="active">
-      <a class="nav-link">Summoner</a>
-    </div>
-    <div [routerLink]="['/summoner', summonerName, 'champions']" class="nav-item" routerLinkActive="active">
-      <a class="nav-link" >Champions</a>
-    </div>
-    <div class="nav-item" [routerLink]="['/summoner', summonerName, 'live']" routerLinkActive="active" [ngClass]="inGame ? 'ingame' : ''">
-      <a class="nav-link">Live Game</a>
-      <p *ngIf="inGame" class="summoner-ingame">In Game</p>
-    </div>
+  <div class="nav-item" [routerLink]="['/summoner', summonerName, 'overview']" routerLinkActive="active">
+    <a class="nav-link">Summoner</a>
+  </div>
+  <div [routerLink]="['/summoner', summonerName, 'champions']" class="nav-item" routerLinkActive="active">
+    <a class="nav-link">Champions</a>
+  </div>
+  <div class="nav-item" [routerLink]="['/summoner', summonerName, 'live']" routerLinkActive="active"
+       [ngClass]="inGame ? 'ingame' : ''">
+    <a class="nav-link">Live Game</a>
+    <p *ngIf="inGame" class="summoner-ingame">In Game</p>
+  </div>
 </nav>

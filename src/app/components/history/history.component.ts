@@ -1,16 +1,17 @@
 // history.component.ts
 
-import { Component, OnInit, HostListener } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { GameService } from "../../services/game/game.service";
-import { SummonerService } from "../../services/summoner/summoner.service";
-import { Game } from "../../interfaces/game.interface";
-import { catchError, finalize, of } from "rxjs";
+import {Component, OnInit, HostListener} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {GameService} from "../../services/game/game.service";
+import {SummonerService} from "../../services/summoner/summoner.service";
+import {Game} from "../../interfaces/game.interface";
+import {catchError, finalize, of} from "rxjs";
 
 interface GameObj {
   match_id: string;
   date: string;
 }
+
 interface SummonerObj {
   puuid: string;
 }
@@ -38,7 +39,8 @@ export class HistoryComponent implements OnInit {
     private route: ActivatedRoute,
     private gameService: GameService,
     private summonerService: SummonerService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {

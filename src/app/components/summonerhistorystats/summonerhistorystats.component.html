@@ -4,7 +4,8 @@
     <!-- First row of stats -->
     <div class="summoner-stats-row">
       <div class="summoner-stats-position">
-        <img class="summoner-stats-position-img" ngSrc="assets/images/positions/{{ mainRole | titlecase }}.png" alt="{{ mainRole }}" width="50" height="50" priority="true">
+        <img class="summoner-stats-position-img" ngSrc="assets/images/positions/{{ mainRole | titlecase }}.png"
+             alt="{{ mainRole }}" width="50" height="50" priority="true">
       </div>
       <div class="summoner-stats-number-of-games">
         <p class="summoner-stats-number-of-games-title">Number of Games</p>
@@ -48,7 +49,9 @@
     <div class="champion-stats">
       <div class="champion-base-stats">
         <div class="champion-stats-image">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ champion.name | fiddleStickException}}.png" alt="{{ champion.name }}" width="50" height="50" class="champion-stats-image">
+          <img
+            ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ champion.name | fiddleStickException}}.png"
+            alt="{{ champion.name }}" width="50" height="50" class="champion-stats-image">
         </div>
         <p class="champion-stats-name">{{ champion.name | monkeyKingExeception }}</p>
       </div>
@@ -75,11 +78,11 @@
   <section class="champion-stats-view-all-container">
     <button [routerLink]="['../champions']" class="champion-stats-view-all-button">View more</button>
   </section>
-  </section>
+</section>
 <section *ngIf="NoStats" class="no-stats-container">
   <img class="no-stats-img" src="assets/images/error.png" alt="No Stats Found" width="200" height="200">
   <h1 class="no-stats-title">No Stats Found</h1>
-  <p class="no-stats-description">This summoner has not played any ranked games in the past 30 days.</p>
+  <p class="no-stats-description"> {{ summonerName }} has any stats for the last 30 days</p>
 </section>
 <section *ngIf="loading">
   <section class="loading">

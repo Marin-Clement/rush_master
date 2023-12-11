@@ -6,11 +6,13 @@
   color: white;
   margin-top: 50px;
 }
+
 .no-stats-img {
   width: 200px;
   height: 200px;
   border-radius: 20%;
 }
+
 .no-stats-title {
   font-size: 2em;
   font-weight: bold;
@@ -19,15 +21,17 @@
   color: white;
   padding-left: 10px;
 }
+
 .no-stats-description {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 25px;
   margin-top: 25px;
   color: white;
   text-align: center;
 }
-.loading{
+
+.loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +42,7 @@
   font-weight: bold;
   color: #fff;
 }
+
 .loading-text {
   display: inline-block;
   position: relative;
@@ -63,23 +68,27 @@
     width: 25px;
   }
 }
-.loading-img{
+
+.loading-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
 }
-@keyframes spin{
-  0%{
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
+
 p {
   margin: 0;
 }
+
 .champion-stats-container {
   display: flex;
   flex-direction: column;
@@ -87,6 +96,7 @@ p {
   justify-content: flex-start;
   padding: 20px;
 }
+
 .champion-stats-title {
   font-size: 2em;
   font-weight: bold;
@@ -96,6 +106,7 @@ p {
   border-left: 4px solid #3272F9FF;
   padding-left: 10px;
 }
+
 .champion-stats {
   display: flex;
   flex-direction: row;
@@ -103,6 +114,7 @@ p {
   justify-content: center;
   color: white;
 }
+
 .champion-base-stats {
   display: flex;
   flex-direction: row;
@@ -110,20 +122,24 @@ p {
   margin-left: 10px;
   width: 10em;
 }
+
 .champion-stats-image {
   width: 50px;
   height: 50px;
   margin-right: 10px;
   overflow: hidden;
 }
+
 .champion-stats-image img {
   scale: 1.1;
 }
+
 .champion-stats-name {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .champion-kda-stats {
   display: flex;
   flex-direction: column;
@@ -133,32 +149,38 @@ p {
   margin-right: 30px;
   min-width: 10em;
 }
+
 .kill-death-assist {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   text-align: center;
 }
+
 .champion-stats-kills {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .champion-stats-deaths {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .champion-stats-assists {
   font-size: 15px;
   font-weight: bold;
 }
+
 .champion-stats-slash {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   color: #828282;
 }
+
 .champion-winrate-stats {
   display: flex;
   flex-direction: column;
@@ -167,17 +189,20 @@ p {
   margin-left: 10px;
   min-width: 10em;
 }
+
 .champion-stats-winrate {
   font-size: 12px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .win-loss {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   margin-left: 10px;
 }
+
 .champion-stats-divider {
   width: 100%;
   height: 4px;
@@ -186,6 +211,7 @@ p {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 .champion-stats-divider:last-child {
   background-color: transparent;
 }
@@ -195,6 +221,7 @@ p {
   font-weight: bold;
   margin-right: 10px;
 }
+
 .champion-stats-winrate-bar {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -203,6 +230,7 @@ p {
   border-radius: 20px;
   background-color: #042b79;
 }
+
 .champion-stats-winrate-bar-fill {
   width: 50%;
   height: 100%;
@@ -223,6 +251,7 @@ p {
   border-left: 4px solid #3272F9FF;
   padding-left: 10px;
 }
+
 /* Styling for the Summoner Stats section */
 .summoner-stats {
   display: flex;
@@ -231,6 +260,7 @@ p {
   justify-content: flex-start;
   color: white;
 }
+
 .summoner-stats-row {
   display: flex;
   flex-direction: row;
@@ -239,23 +269,27 @@ p {
   margin-bottom: 20px;
   min-width: 10em;
 }
+
 .summoner-stats-position {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .summoner-stats-position-img {
   width: 50px;
   height: 50px;
   margin-right: 10px;
   overflow: hidden;
 }
+
 .summoner-stats-number-of-games {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-number-of-games-title {
   font-size: 15px;
   font-weight: bold;
@@ -263,18 +297,21 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-number-of-games-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-winrate {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-winrate-title {
   font-size: 15px;
   font-weight: bold;
@@ -282,18 +319,21 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-winrate-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-kda {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-kda-title {
   font-size: 15px;
   font-weight: bold;
@@ -301,18 +341,21 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-kda-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-csPerMin {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-csPerMin-title {
   font-size: 15px;
   font-weight: bold;
@@ -320,12 +363,14 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-csPerMin-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-divider {
   width: 100%;
   height: 4px;
@@ -333,12 +378,14 @@ p {
   background-color: #272f62;
   margin-bottom: 10px;
 }
+
 .summoner-stats-goldPerMin {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-goldPerMin-title {
   font-size: 15px;
   font-weight: bold;
@@ -346,18 +393,21 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-goldPerMin-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-damagePerMin {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-damagePerMin-title {
   font-size: 15px;
   font-weight: bold;
@@ -365,17 +415,20 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-damagePerMin-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .summoner-stats-visionPerMin {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
 }
+
 .summoner-stats-visionPerMin-title {
   font-size: 15px;
   font-weight: bold;
@@ -383,12 +436,14 @@ p {
   color: #828282;
   text-align: center;
 }
+
 .summoner-stats-visionPerMin-value {
   font-size: 15px;
   font-weight: bold;
   margin-right: 10px;
   text-align: center;
 }
+
 .champion-stats-view-all-container {
   display: flex;
   flex-direction: column;
@@ -397,6 +452,7 @@ p {
   color: white;
   width: 100%;
 }
+
 .champion-stats-view-all-button {
   display: flex;
   flex-direction: row;
@@ -415,12 +471,15 @@ p {
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
+
 .champion-stats-view-all-button:hover {
   background-color: #0b59ff;
 }
+
 .champion-stats-view-all-button:active {
   background-color: #0b59ff;
 }
+
 @media only screen and (max-height: 900px) {
   .champion-stats-container {
     padding: 10px;
@@ -430,16 +489,19 @@ p {
     justify-items: center;
     align-items: flex-start;
   }
+
   .champion-stats-title {
     font-size: 1.5em;
     text-align: center;
   }
+
   .champion-stats {
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
+
   .champion-base-stats {
     flex-direction: column;
     align-items: center;
@@ -447,16 +509,19 @@ p {
     margin-right: 0;
     width: 100%;
   }
+
   .champion-stats-image {
     width: 40px;
     height: 40px;
     margin-right: 0px;
     margin-bottom: 10px;
   }
+
   .champion-stats-name {
     font-size: 12px;
     margin-right: 0px;
   }
+
   .champion-winrate-stats {
     flex-direction: column;
     align-items: center;
@@ -464,6 +529,7 @@ p {
     margin-left: 0px;
     margin-right: 0px;
   }
+
   .champion-kda-stats {
     flex-direction: column;
     align-items: center;

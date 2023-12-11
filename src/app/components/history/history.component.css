@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,14 +7,16 @@
   margin-bottom: 2rem;
   width: 100%;
 }
-.history-container{
+
+.history-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 100%;
   width: 100%;
 }
-.history-stats{
+
+.history-stats {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +30,8 @@
   border-bottom-left-radius: 25px;
   animation: stepFromLeft 0.5s ease-in-out;
 }
-.game-history{
+
+.game-history {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +44,7 @@
   border-bottom-right-radius: 25px;
   animation: stepFromRight 0.5s ease-in-out;
 }
+
 @keyframes stepFromLeft {
   0% {
     opacity: 0;
@@ -51,6 +55,7 @@
     transform: translateX(0px);
   }
 }
+
 @keyframes stepFromRight {
   0% {
     opacity: 0;
@@ -61,7 +66,8 @@
     transform: translateX(0px);
   }
 }
-.no-more-games{
+
+.no-more-games {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +78,8 @@
   font-weight: bold;
   color: #fff;
 }
-.no-more-games-icon{
+
+.no-more-games-icon {
   width: 75px;
   height: 75px;
   border-radius: 50%;
@@ -80,11 +87,13 @@
   transition: all 0.3s ease-in-out;
   background: #0a0a2f;
 }
-.no-more-games-icon:hover{
+
+.no-more-games-icon:hover {
   transform: scale(1.1);
   background: #3272F9FF;
 }
-.no-games{
+
+.no-games {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +104,8 @@
   font-weight: bold;
   color: #fff;
 }
-.loading{
+
+.loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,6 +116,7 @@
   font-weight: bold;
   color: #fff;
 }
+
 .loading-text {
   display: inline-block;
   position: relative;
@@ -131,53 +142,61 @@
     width: 25px;
   }
 }
-.loading-img{
+
+.loading-img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   animation: spin 1.5s linear infinite;
 }
-@keyframes spin{
-  0%{
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
-.live-game-container{
+
+.live-game-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-h2{
+
+h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
   cursor: default;
   transition: all 0.3s ease-in-out;
 }
-h2:hover{
+
+h2:hover {
   color: #ce2828;
 }
-p{
+
+p {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   margin: 0;
 }
-img{
+
+img {
   object-fit: cover;
   border-radius: 25%;
 }
 
-@media only screen and (max-height: 900px){
-  .history-stats{
+@media only screen and (max-height: 900px) {
+  .history-stats {
     width: 28em;
   }
-  .game-history{
+
+  .game-history {
     width: 53em;
   }
 }

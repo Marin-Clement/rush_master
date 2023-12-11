@@ -7,3 +7,10 @@ html, body {
   margin: 0;
   scroll-behavior: smooth;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
+#root {
+  flex: 1;
+}

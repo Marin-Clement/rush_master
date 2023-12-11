@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import { Summoner, SummonerStat } from '../../interfaces/summoner.interface';
-import { SummonerService } from '../../services/summoner/summoner.service';
-import { forkJoin, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import {th} from "date-fns/locale";
+import {Summoner, SummonerStat} from '../../interfaces/summoner.interface';
+import {SummonerService} from '../../services/summoner/summoner.service';
+import {finalize, forkJoin, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-summonerlist',
@@ -12,11 +11,13 @@ import {th} from "date-fns/locale";
   styleUrls: ['./summonerlist.component.css']
 })
 export class SummonerlistComponent implements OnInit {
-  summoners: Summoner = { summonerNames: [], summonerIconsIds: [] };
+  summoners: Summoner = {summonerNames: [], summonerIconsIds: []};
   summonerStats: SummonerStat[] = [];
   liveGameInfo: any;
+  loading = true;
 
-  constructor(private _summonerService: SummonerService, private router: Router) {}
+  constructor(private _summonerService: SummonerService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.fetchSummoner();
@@ -31,7 +32,6 @@ export class SummonerlistComponent implements OnInit {
           this.router.navigate(['/error', error.name]).then(r => console.log(r));
           return throwError(error);
         }),
-
       )
       .subscribe((data: Summoner) => {
         this.summoners = data;
@@ -46,7 +46,7 @@ export class SummonerlistComponent implements OnInit {
     this._summonerService.getLiveGameInfo()
       .subscribe((liveGameInfo) => {
         this.liveGameInfo = liveGameInfo;
-        console.log('Live game information:', liveGameInfo);
+        this.loading = false;
       });
   }
 

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SummonerService } from '../../services/summoner/summoner.service';
+import {Component, OnInit, Input} from '@angular/core';
+import {SummonerService} from '../../services/summoner/summoner.service';
 import {finalize} from "rxjs";
 
 @Component({
@@ -14,7 +14,8 @@ export class SummonerheaderComponent implements OnInit {
   summonerInfo: any;
   loading: boolean = true;
 
-  constructor(private summonerService: SummonerService) { }
+  constructor(private summonerService: SummonerService) {
+  }
 
   ngOnInit(): void {
     this.getSummonerStats();
@@ -25,20 +26,20 @@ export class SummonerheaderComponent implements OnInit {
     this.summonerService.getSummonerStats(this.summonerName)
       .pipe(
         finalize(() => {
-          this.getSummonerInfo();
-        }
-    ))
-    .subscribe(summonerStats => this.summonerStats = summonerStats);
+            this.getSummonerInfo();
+          }
+        ))
+      .subscribe(summonerStats => this.summonerStats = summonerStats);
   }
 
   getSummonerInfo(): void {
     this.summonerService.getSummonerInfo(this.summonerName)
       .pipe(
         finalize(() => {
-          this.loading = false;
-        }
-    ))
-    .subscribe(summoner => this.summonerInfo = summoner);
+            this.loading = false;
+          }
+        ))
+      .subscribe(summoner => this.summonerInfo = summoner);
   }
 
   getCurrentRoute(): string {

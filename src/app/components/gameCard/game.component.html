@@ -1,4 +1,5 @@
-<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win, 'remake': remake }" (click)="expanded = !expanded">
+<section class="game-container" [ngClass]="{ 'win': win, 'lose': !win, 'remake': remake }"
+         (click)="expanded = !expanded">
   <div class="game-general-info-container">
     <div class="game-general-info">
       <div class="game-general-info-time">
@@ -6,16 +7,18 @@
         <span class="game-general-info-time-value-duration">{{ gameDuration * 1000 | date:'mm:ss' }}</span>
       </div>
       <div class="game-general-info-win">
-        <span class="game-general-info-win-value" [ngStyle]="{ color: win ? '#2F6DEC' : remake ? '#9E9EB0' : '#ff4d4d' }">{{ win ? 'Victory' : remake ? 'Remake' : 'Defeat' }}</span>
+        <span class="game-general-info-win-value"
+              [ngStyle]="{ color: win ? '#2F6DEC' : remake ? '#9E9EB0' : '#ff4d4d' }">{{ win ? 'Victory' : remake ? 'Remake' : 'Defeat' }}</span>
       </div>
     </div>
     <div class="summoner-image-summoner-container">
       <div class="summoner-image-container">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ championName | fiddleStickException }}.png"
-             class="game-general-info-champion-icon"
-             width="100"
-             height="100"
-             alt="champion icon">
+        <img
+          ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ championName | fiddleStickException }}.png"
+          class="game-general-info-champion-icon"
+          width="100"
+          height="100"
+          alt="champion icon">
       </div>
       <section class="summoner-summoner-container">
         <ng-container *ngFor="let summoner of summonersId">
@@ -33,13 +36,16 @@
   <section class="summoner-stats-container">
     <div class="summoner-stats">
       <div class="summoner-stats-kda">
-        <span class="summoner-stats-kda-value">{{ kills }} / <span style="color: #ff4d4d">{{ deaths }}</span> / {{ assists }}</span>
+        <span class="summoner-stats-kda-value">{{ kills }} / <span
+          style="color: #ff4d4d">{{ deaths }}</span> / {{ assists }}</span>
       </div>
       <div class="game-general-info-kda">
-        <span class="game-general-info-kda-value" [ngStyle]="{ color: kda === 'Perfect' ? 'rgb(255,134,39)' : 'white' }">{{ kda }} KDA</span>
+        <span class="game-general-info-kda-value"
+              [ngStyle]="{ color: kda === 'Perfect' ? 'rgb(255,134,39)' : 'white' }">{{ kda }} KDA</span>
       </div>
       <div class="summoner-stats-cs">
-        <span class="summoner-stats-cs-value">{{ totalMinionsKilled+neutralMinionsKilled }} ({{(totalMinionsKilled+neutralMinionsKilled)/((gameDuration*1000)/60000) | number: '1.1-1'}})</span>
+        <span class="summoner-stats-cs-value">{{ totalMinionsKilled + neutralMinionsKilled }}
+          ({{(totalMinionsKilled + neutralMinionsKilled) / ((gameDuration * 1000) / 60000) | number: '1.1-1'}})</span>
       </div>
       <div class="summoner-stats-vision">
         <span class="summoner-stats-vision-value">{{ visionScore }} Vision</span>
@@ -64,12 +70,14 @@
         <div class="team">
           <ng-container *ngFor="let summoner of team1, index as i">
             <div class="summoner-team-container">
-              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team1Champs[i] | fiddleStickException }}.png"
-                   class="summoner-summoner-champion-icon"
-                   width="50"
-                   height="50"
-                   alt="champion icon">
-              <a class="summoner-team-name" href="https://u.gg/lol/profile/euw1/{{summoner}}/overview" target="_blank" [ngStyle]="{ color: summoner === summonerName ? 'white' : 'rgb(170, 170, 170)'}">{{ summoner }}</a>
+              <img
+                ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team1Champs[i] | fiddleStickException }}.png"
+                class="summoner-summoner-champion-icon"
+                width="50"
+                height="50"
+                alt="champion icon">
+              <a class="summoner-team-name" href="https://u.gg/lol/profile/euw1/{{summoner}}/overview" target="_blank"
+                 [ngStyle]="{ color: summoner === summonerName ? 'white' : 'rgb(170, 170, 170)'}">{{ summoner }}</a>
             </div>
           </ng-container>
         </div>
@@ -78,19 +86,29 @@
         <div class="team">
           <ng-container *ngFor="let summoner of team2, index as i">
             <div class="summoner-team-container">
-              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team2Champs[i] | fiddleStickException }}.png"
-                   class="summoner-summoner-champion-icon"
-                   width="50"
-                   height="50"
-                   alt="champion icon">
-              <a class="summoner-team-name" href="https://u.gg/lol/profile/euw1/{{summoner}}/overview" target="_blank" [ngStyle]="{ color: summoner === summonerName ? 'white' : 'rgb(170, 170, 170)'}">{{ summoner }}</a>
+              <img
+                ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team2Champs[i] | fiddleStickException }}.png"
+                class="summoner-summoner-champion-icon"
+                width="50"
+                height="50"
+                alt="champion icon">
+              <a class="summoner-team-name" href="https://u.gg/lol/profile/euw1/{{summoner}}/overview" target="_blank"
+                 [ngStyle]="{ color: summoner === summonerName ? 'white' : 'rgb(170, 170, 170)'}">{{ summoner }}</a>
             </div>
           </ng-container>
         </div>
       </section>
       <div class="expend-button-container">
-        <svg *ngIf="!expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        <svg *ngIf="expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        <svg *ngIf="!expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             class="feather feather-chevron-down">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+        <svg *ngIf="expanded" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             class="feather feather-chevron-up">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
       </div>
     </section>
   </section>
