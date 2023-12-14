@@ -30,12 +30,12 @@ export class AdminpanelComponent implements OnInit {
     message: '',
   };
 
-
   messagePopupList = [] as any;
 
-  summoners: Summoner = { summonerNames: [], summonerIconsIds: [] };
+  summoners: Summoner = {summonerNames: [], summonerIconsIds: []};
 
-  constructor(private adminService: AdminService, private summonerService: SummonerService, private router: Router) { }
+  constructor(private adminService: AdminService, private summonerService: SummonerService, private router: Router) {
+  }
 
   ngOnInit(): void {
     document.title = 'Admin - RoadMaster';
@@ -133,7 +133,7 @@ export class AdminpanelComponent implements OnInit {
 
   refreshAll(): void {
     this.isRefreshing = true;
-    this.addMessagePopup('info', 'Refreshing all summoners...', '');
+    this.addMessagePopup('info', 'Refreshing all summoners', 'loading...');
     this.adminService.refreshAll().subscribe({
       next: () => {
         this.isRefreshing = false;
@@ -155,16 +155,19 @@ export class AdminpanelComponent implements OnInit {
       },
       error: () => {
         this.addMessagePopup('error', 'Summoner not deleted', summonerName);
-      },
+      }
     });
   }
-   scrollToTop(): void {
+
+  scrollToTop(): void {
     window.scrollTo(0, 0);
   }
 
-  addMessagePopup(type: string,title: string, message: string): void {
-    this.messagePopupList.push({ type, title, message });
-    setTimeout(() => { this.messagePopupList.shift(); }
+  addMessagePopup(type: string, title: string, message: string): void {
+    this.messagePopupList.push({type, title, message});
+    setTimeout(() => {
+        this.messagePopupList.shift();
+      }
       , 3000);
   }
 }

@@ -11,7 +11,7 @@
     </div>
     <div class="summoner-image-summoner-container">
       <div class="summoner-image-container">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ championName | fiddleStickException }}.png"
+        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{{ championName | fiddleStickException }}.png"
              class="game-general-info-champion-icon"
              width="100"
              height="100"
@@ -20,7 +20,7 @@
       <section class="summoner-summoner-container">
         <ng-container *ngFor="let summoner of summonersId">
           <ng-container *ngIf="summoner">
-            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ summoner }}.png"
+            <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/{{ summoner }}.png"
                  class="summoner-summoner-spell"
                  width="50"
                  height="50"
@@ -48,7 +48,7 @@
     <section class="item-container">
       <ng-container *ngFor="let item of items">
         <ng-container *ngIf="item">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/item/{{ item }}.png"
+          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/item/{{ item }}.png"
                class="summoner-item"
                width="50"
                height="50"
@@ -64,7 +64,7 @@
         <div class="team">
           <ng-container *ngFor="let summoner of team1, index as i">
             <div class="summoner-team-container">
-              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team1Champs[i] | fiddleStickException }}.png"
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{{ team1Champs[i] | fiddleStickException }}.png"
                    class="summoner-summoner-champion-icon"
                    width="50"
                    height="50"
@@ -78,7 +78,7 @@
         <div class="team">
           <ng-container *ngFor="let summoner of team2, index as i">
             <div class="summoner-team-container">
-              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ team2Champs[i] | fiddleStickException }}.png"
+              <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{{ team2Champs[i] | fiddleStickException }}.png"
                    class="summoner-summoner-champion-icon"
                    width="50"
                    height="50"

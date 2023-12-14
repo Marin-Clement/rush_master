@@ -59,7 +59,7 @@ export class GameService {
   }
 
   public getChampionJson(): Observable<any> {
-    const url = `http://ddragon.leagueoflegends.com/cdn/13.20.1/data/en_US/champion.json`;
+    const url = `http://ddragon.leagueoflegends.com/cdn/13.24.1/data/en_US/champion.json`;
 
     // Check if the data is in the cache
     if (this.cache.has(url)) {

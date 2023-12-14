@@ -8,7 +8,7 @@
   <section class="team">
     <div class="summoner" *ngFor="let participant of team1, let i = index">
       <a class="main-summoner-info" href="https://u.gg/lol/profile/euw1/{{participant.summonerName}}/overview" target="_blank">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{participant.profileIconId}}.png"
+        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/{{participant.profileIconId}}.png"
              class="summoner-icon"
              width="50"
              height="50"
@@ -16,18 +16,18 @@
         <div class="summoner-name" [ngClass]="{'summoner-name-active': participant.summonerName === summonerName}">{{participant.summonerName}}</div>
       </a>
       <div class="main-summoner-champion-container">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ getChampionName(participant.championId) | fiddleStickException }}.png"
+        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{{ getChampionName(participant.championId) | fiddleStickException }}.png"
              class="summoner-summoner-champion-icon"
              width="50"
              height="50"
              alt="champion icon">
         <div class="main-summoner-spells">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSummonerSpellName(participant.spell1Id) }}.png"
+          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/{{ getSummonerSpellName(participant.spell1Id) }}.png"
                class="summoner-spell-icon"
                width="25"
                height="25"
                alt="summoner spell icon">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSummonerSpellName(participant.spell2Id) }}.png"
+          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/{{ getSummonerSpellName(participant.spell2Id) }}.png"
                class="summoner-spell-icon"
                width="25"
                height="25"
@@ -40,7 +40,7 @@
   <section class="team">
     <div class="summoner" *ngFor="let participant of team2">
       <a class="main-summoner-info" href="https://u.gg/lol/profile/euw1/{{participant.summonerName}}/overview" target="_blank">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/profileicon/{{participant.profileIconId}}.png"
+        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/{{participant.profileIconId}}.png"
              class="summoner-icon"
              width="50"
              height="50"
@@ -48,18 +48,18 @@
         <div class="summoner-name" [ngClass]="{'summoner-name-active': participant.summonerName === summonerName}">{{participant.summonerName}}</div>
       </a>
       <div class="main-summoner-champion-container">
-        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/champion/{{ getChampionName(participant.championId) | fiddleStickException }}.png"
+        <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{{ getChampionName(participant.championId) | fiddleStickException }}.png"
              class="summoner-summoner-champion-icon"
              width="50"
              height="50"
              alt="champion icon">
         <div class="main-summoner-spells">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSummonerSpellName(participant.spell1Id) }}.png"
+          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/{{ getSummonerSpellName(participant.spell1Id) }}.png"
                class="summoner-spell-icon"
                width="25"
                height="25"
                alt="summoner spell icon">
-          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.20.1/img/spell/{{ getSummonerSpellName(participant.spell2Id) }}.png"
+          <img ngSrc="https://ddragon.leagueoflegends.com/cdn/13.24.1/img/spell/{{ getSummonerSpellName(participant.spell2Id) }}.png"
                class="summoner-spell-icon"
                width="25"
                height="25"

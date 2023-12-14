@@ -4,7 +4,6 @@ import { SummonerService } from '../../services/summoner/summoner.service';
 import { forkJoin, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import {th} from "date-fns/locale";
 
 @Component({
   selector: 'app-summonerlist',
@@ -64,6 +63,7 @@ export class SummonerlistComponent implements OnInit {
       "GRANDMASTER": 10,
       "CHALLENGER": 11,
     };
+
     const rank: { [key: string]: number } = {
       "I": 4,
       "II": 3,
